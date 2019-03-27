@@ -7,10 +7,40 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+if(isset($_POST['search'])){
+    $searchq = $_POST['search'];
+    $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
+    $sQuery = "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='%$searchq%' AND A.uid=B.uid AND B.app_status='completed' ";
+    $sResult = $conn->query($sQuery) OR die("Connection failed: " . $conn->connect_error);
+    echo $sResult->num_rows;
+    while($sRow = $sResult->fetch_assoc()) {
+        echo " - uid". $sRow["uid"];
+        echo " - first name". $sRow["first_name"];
+        echo " - last name". $sRow["last_name"];
+        echo " - address". $sRow["street"]."<br>".$sRow["city"]."<br>".$sRow["state"]."<br>".$oRow["zip"];
+        echo " - email". $sRow["email"];
+        echo " - admission term". $sRow["app_term"];
+        echo " - area of interest". $sRow["area_of_interest"];
+        echo " - GRE verbal". $sRow["GRE_verbal"];
+        echo " - GRE quantitative". $sRow["GRE_quantitative"];
+        echo " - GRE total". $sRow["GRE_total"];
+        echo " - bachelor school". $sRow["bachelor_school"];
+        echo " - bachelor degree". $sRow["bachelor_degree"];
+        echo " - bachelor major". $sRow["bachelor_major"];
+        echo " - bachelor year". $sRow["bachelor_year"];
+        echo " - bachelor GPA". $sRow["bachelor_GPA"];
+        echo " - transcript received?". $sRow["transcript_received"];
+        echo " - recommendation letter received?". $sRow["rec_received"];
+    }
+} else {
+    echo "Applicant Not Found";
+}
+
 
 $q = isset($_GET['applicant'])? htmlspecialchars($_GET['applicant']) : '';
-$oQuery= "SELECT * FROM applicant A AND application B WHERE B.uid='$q' AND A.uid=B.uid";
-$oResult= $conn->query($oQuery);
+$oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='$q' AND A.uid=B.uid";
+$oResult= $conn->query($oQuery) OR die("Connection failed: " . $conn->connect_error);
+echo $sResult->num_rows;
 while($oRow = $oResult->fetch_assoc()){
     echo " - uid". $oRow["uid"];
     echo " - first name". $oRow["first_name"];
@@ -36,8 +66,9 @@ while($oRow = $oResult->fetch_assoc()){
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-    $sQuery = "SELECT * FROM applicant A AND application B WHERE 'B.uid'='%$searchq%' AND A.uid=B.uid AND B.app_status='completed' ";
-    $sResult = $conn->query($sQuery);
+    $sQuery = "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='%$searchq%' AND A.uid=B.uid AND B.app_status='completed' ";
+    $sResult = $conn->query($sQuery) OR die("Connection failed: " . $conn->connect_error);
+    echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
         echo " - uid". $sRow["uid"];
         echo " - first name". $sRow["first_name"];
@@ -86,6 +117,10 @@ $conn->close();
 <br><br><br><br>
 </body>
 </html>
+
+
+
+
 
 
 
