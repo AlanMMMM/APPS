@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
     $sQuery = "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='$searchq' AND A.uid=B.uid AND B.app_status='completed' ";
-    $sResult = $conn->query($sQuery) or die($mysqli->error);
+    $sResult = $conn->query($sQuery) or die("there is mysql error: ".$mysqli->error);
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
         echo " - uid". $sRow["uid"];
