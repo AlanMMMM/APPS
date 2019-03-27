@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
-    $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(B.uid AS CHAR)='$searchq' AND A.uid=B.uid AND B.app_status='completed' ";
+    $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR)='$searchq' AND A.uid=B.uid AND A.app_status='completed'";
     $sResult = $conn->query($sQuery) or die("there is mysql error: ".$mysqli->error."");
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
@@ -61,35 +61,6 @@ while($oRow = $oResult->fetch_assoc()){
 }
 
 
-
-if(isset($_POST['search'])){
-    $searchq = $_POST['search'];
-    $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-    $sQuery = "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='%$searchq%' AND A.uid=B.uid AND B.app_status='completed' ";
-    $sResult = $conn->query($sQuery) OR die("Connection failed: " . $conn->connect_error);
-    echo $sResult->num_rows;
-    while($sRow = $sResult->fetch_assoc()) {
-        echo " - uid". $sRow["uid"];
-        echo " - first name". $sRow["first_name"];
-        echo " - last name". $sRow["last_name"];
-        echo " - address". $sRow["street"]."<br>".$sRow["city"]."<br>".$sRow["state"]."<br>".$oRow["zip"];
-        echo " - email". $sRow["email"];
-        echo " - admission term". $sRow["app_term"];
-        echo " - area of interest". $sRow["area_of_interest"];
-        echo " - GRE verbal". $sRow["GRE_verbal"];
-        echo " - GRE quantitative". $sRow["GRE_quantitative"];
-        echo " - GRE total". $sRow["GRE_total"];
-        echo " - bachelor school". $sRow["bachelor_school"];
-        echo " - bachelor degree". $sRow["bachelor_degree"];
-        echo " - bachelor major". $sRow["bachelor_major"];
-        echo " - bachelor year". $sRow["bachelor_year"];
-        echo " - bachelor GPA". $sRow["bachelor_GPA"];
-        echo " - transcript received?". $sRow["transcript_received"];
-        echo " - recommendation letter received?". $sRow["rec_received"];
-    }
-} else {
-    echo "Applicant Not Found";
-}
 if(isset($_POST['decisionRec'])){
     $addingq=$_POST['decisionRec'];
     $aQuery = "UPDATE application SET app_rec='$addingq', app_status='reviewed' WHERE uid='$q' OR uid='$searchq'";
