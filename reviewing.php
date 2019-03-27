@@ -13,23 +13,28 @@ if(isset($_POST['search'])){
     $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
-        echo " - uid". $sRow["uid"]."<br>";
-        echo " - first name". $sRow["first_name"]."<br>";
-        echo " - last name". $sRow["last_name"]."<br>";
-        echo " - address". $sRow["street"].$sRow["city"].$sRow["state"].$oRow["zip"]."<br>";
-        echo " - email". $sRow["email"]."<br>";
-        echo " - admission term". $sRow["app_term"]."<br>";
-        echo " - area of interest". $sRow["area_of_interest"]."<br>";
-        echo " - GRE verbal". $sRow["GRE_verbal"]."<br>";
-        echo " - GRE quantitative". $sRow["GRE_quantitative"]."<br>";
-        echo " - GRE total". $sRow["GRE_total"]."<br>";
-        echo " - bachelor school". $sRow["bachelor_school"]."<br>";
-        echo " - bachelor degree". $sRow["bachelor_degree"]."<br>";
-        echo " - bachelor major". $sRow["bachelor_major"]."<br>";
-        echo " - bachelor year". $sRow["bachelor_year"]."<br>";
-        echo " - bachelor GPA". $sRow["bachelor_GPA"]."<br>";
-        echo " - transcript received?". $sRow["transcript_received"]."<br>";
-        echo " - recommendation letter received?". $sRow["rec_received"]."<br>";
+        echo "Personal Information"."<br>";
+        echo " - uid: ". $sRow["uid"]."<br>";
+        echo " - first name: ". $sRow["first_name"]."<br>";
+        echo " - last name: ". $sRow["last_name"]."<br>";
+        echo " - address: ". $sRow["street"]." ".$sRow["city"]." ".$sRow["state"]." ".$oRow["zip"]."<br>";
+        echo " - email ". $sRow["email"]."<br>";
+        echo "Application Infromation"."<br>";
+        echo " - admission term ". $sRow["app_term"]."<br>";
+        echo " - area of interest ". $sRow["area_of_interest"]."<br>";
+        echo "GRE Score"."<br>";
+        echo " - GRE verbal ". $sRow["GRE_verbal"]."<br>";
+        echo " - GRE quantitative ". $sRow["GRE_quantitative"]."<br>";
+        echo " - GRE total ". $sRow["GRE_total"]."<br>";
+        echo "Education Information"."<br>";
+        echo " - bachelor school ". $sRow["bachelor_school"]."<br>";
+        echo " - bachelor degree ". $sRow["bachelor_degree"]."<br>";
+        echo " - bachelor major ". $sRow["bachelor_major"]."<br>";
+        echo " - bachelor year ". $sRow["bachelor_year"]."<br>";
+        echo " - bachelor GPA ". $sRow["bachelor_GPA"]."<br>";
+        echo "Application Material"."<br>";
+        echo " - transcript received? ". $sRow["transcript_received"]."<br>";
+        echo " - recommendation letter received? ". $sRow["rec_received"]."<br>";
     }
 } else {
     echo "Applicant Not Found";
@@ -90,4 +95,5 @@ $conn->close();
 <br><br><br><br>
 </body>
 </html>
+
 
