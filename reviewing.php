@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
-    $sQuery = "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='$searchq' AND A.uid=B.uid AND B.app_status='completed' ";
+    $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(B.uid AS CHAR)='$searchq' AND A.uid=B.uid AND B.app_status='completed' ";
     $sResult = $conn->query($sQuery) or die("there is mysql error: ".$mysqli->error);
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
@@ -37,7 +37,7 @@ if(isset($_POST['search'])){
 
 
 $q = isset($_GET['applicant'])? htmlspecialchars($_GET['applicant']) : '';
-$oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='$q' AND A.uid=B.uid";
+$oQuery= "SELECT * FROM applicant A,application B WHERE CAST(B.uid AS CHAR)='$q' AND A.uid=B.uid";
 $oResult= $conn->query($oQuery) or die($mysqli->error);
 echo $sResult->num_rows;
 while($oRow = $oResult->fetch_assoc()){
