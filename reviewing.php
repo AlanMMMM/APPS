@@ -13,23 +13,23 @@ if(isset($_POST['search'])){
     $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
-        echo " - uid". $sRow["uid"].'\n';
-        echo " - first name". $sRow["first_name"].'\n';
-        echo " - last name". $sRow["last_name"].'\n';
-        echo " - address". $sRow["street"]."<br>".$sRow["city"]."<br>".$sRow["state"]."<br>".$oRow["zip"].'\n';
-        echo " - email". $sRow["email"].'\n';
-        echo " - admission term". $sRow["app_term"].'\n';
-        echo " - area of interest". $sRow["area_of_interest"].'\n';
-        echo " - GRE verbal". $sRow["GRE_verbal"].'\n';
-        echo " - GRE quantitative". $sRow["GRE_quantitative"].'\n';
-        echo " - GRE total". $sRow["GRE_total"].'\n';
-        echo " - bachelor school". $sRow["bachelor_school"].'\n';
-        echo " - bachelor degree". $sRow["bachelor_degree"].'\n';
-        echo " - bachelor major". $sRow["bachelor_major"].'\n';
-        echo " - bachelor year". $sRow["bachelor_year"].'\n';
-        echo " - bachelor GPA". $sRow["bachelor_GPA"].'\n';
-        echo " - transcript received?". $sRow["transcript_received"].'\n';
-        echo " - recommendation letter received?". $sRow["rec_received"].'\n';
+        echo " - uid". $sRow["uid"]."<br>";
+        echo " - first name". $sRow["first_name"]."<br>";
+        echo " - last name". $sRow["last_name"]."<br>";
+        echo " - address". $sRow["street"].$sRow["city"].$sRow["state"].$oRow["zip"]."<br>";
+        echo " - email". $sRow["email"]."<br>";
+        echo " - admission term". $sRow["app_term"]."<br>";
+        echo " - area of interest". $sRow["area_of_interest"]."<br>";
+        echo " - GRE verbal". $sRow["GRE_verbal"]."<br>";
+        echo " - GRE quantitative". $sRow["GRE_quantitative"]."<br>";
+        echo " - GRE total". $sRow["GRE_total"]."<br>";
+        echo " - bachelor school". $sRow["bachelor_school"]."<br>";
+        echo " - bachelor degree". $sRow["bachelor_degree"]."<br>";
+        echo " - bachelor major". $sRow["bachelor_major"]."<br>";
+        echo " - bachelor year". $sRow["bachelor_year"]."<br>";
+        echo " - bachelor GPA". $sRow["bachelor_GPA"]."<br>";
+        echo " - transcript received?". $sRow["transcript_received"]."<br>";
+        echo " - recommendation letter received?". $sRow["rec_received"]."<br>";
     }
 } else {
     echo "Applicant Not Found";
@@ -85,14 +85,9 @@ $conn->close();
 <h2 style="text-align:center;"> Now please make recommendation</h2>
 <form style="text-align: center;" action="" method="post">
     Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid  <input type="text" name="decisionRec"><br>
-    <input type=""submit" value=">>" />
+    <input type="submit" value=">>" />
 </form>
 <br><br><br><br>
 </body>
 </html>
-
-
-
-
-
 
