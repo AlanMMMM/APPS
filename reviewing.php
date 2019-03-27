@@ -11,7 +11,7 @@ if(isset($_POST['search'])){
     $searchq = $_POST['search'];
     $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
     $sQuery = "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='%$searchq%' AND A.uid=B.uid AND B.app_status='completed' ";
-    $sResult = $conn->query($sQuery) OR trigger_error($mysqli -> error." ".$query);
+    $sResult = $conn->query($sQuery) OR trigger_error($mysqli -> error." ".$sQuery);
     echo $sResult->num_rows;
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
