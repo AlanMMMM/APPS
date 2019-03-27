@@ -9,27 +9,27 @@ if ($conn->connect_error) {
 }
 if(isset($_POST['search'])){
     $searchq = $_POST['search'];
-    $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR)='$searchq' AND A.uid=B.uid AND A.app_status='completed'";
-    $sResult = $conn->query($sQuery) or die("there is mysql error: ".$mysqli->error."");
+    $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR)='1' AND A.uid=B.uid AND A.app_status='completed'";
+    $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
     echo $sResult->num_rows;
     while($sRow = $sResult->fetch_assoc()) {
-        echo " - uid". $sRow["uid"];
-        echo " - first name". $sRow["first_name"];
-        echo " - last name". $sRow["last_name"];
-        echo " - address". $sRow["street"]."<br>".$sRow["city"]."<br>".$sRow["state"]."<br>".$oRow["zip"];
-        echo " - email". $sRow["email"];
-        echo " - admission term". $sRow["app_term"];
-        echo " - area of interest". $sRow["area_of_interest"];
-        echo " - GRE verbal". $sRow["GRE_verbal"];
-        echo " - GRE quantitative". $sRow["GRE_quantitative"];
-        echo " - GRE total". $sRow["GRE_total"];
-        echo " - bachelor school". $sRow["bachelor_school"];
-        echo " - bachelor degree". $sRow["bachelor_degree"];
-        echo " - bachelor major". $sRow["bachelor_major"];
-        echo " - bachelor year". $sRow["bachelor_year"];
-        echo " - bachelor GPA". $sRow["bachelor_GPA"];
-        echo " - transcript received?". $sRow["transcript_received"];
-        echo " - recommendation letter received?". $sRow["rec_received"];
+        echo " - uid". $sRow["uid"].'\n';
+        echo " - first name". $sRow["first_name"].'\n';
+        echo " - last name". $sRow["last_name"].'\n';
+        echo " - address". $sRow["street"]."<br>".$sRow["city"]."<br>".$sRow["state"]."<br>".$oRow["zip"].'\n';
+        echo " - email". $sRow["email"].'\n';
+        echo " - admission term". $sRow["app_term"].'\n';
+        echo " - area of interest". $sRow["area_of_interest"].'\n';
+        echo " - GRE verbal". $sRow["GRE_verbal"].'\n';
+        echo " - GRE quantitative". $sRow["GRE_quantitative"].'\n';
+        echo " - GRE total". $sRow["GRE_total"].'\n';
+        echo " - bachelor school". $sRow["bachelor_school"].'\n';
+        echo " - bachelor degree". $sRow["bachelor_degree"].'\n';
+        echo " - bachelor major". $sRow["bachelor_major"].'\n';
+        echo " - bachelor year". $sRow["bachelor_year"].'\n';
+        echo " - bachelor GPA". $sRow["bachelor_GPA"].'\n';
+        echo " - transcript received?". $sRow["transcript_received"].'\n';
+        echo " - recommendation letter received?". $sRow["rec_received"].'\n';
     }
 } else {
     echo "Applicant Not Found";
@@ -37,7 +37,7 @@ if(isset($_POST['search'])){
 
 
 $q = isset($_GET['applicant'])? htmlspecialchars($_GET['applicant']) : '';
-$oQuery= "SELECT * FROM applicant A,application B WHERE CAST(B.uid AS CHAR)='$q' AND A.uid=B.uid";
+$oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='$q' AND A.uid=B.uid";
 $oResult= $conn->query($oQuery) or die($mysqli->error);
 echo $sResult->num_rows;
 while($oRow = $oResult->fetch_assoc()){
@@ -59,6 +59,9 @@ while($oRow = $oResult->fetch_assoc()){
     echo " - transcript received?". $oRow["transcript_received"];
     echo " - recommendation letter received?". $oRow["rec_received"];
 }
+
+
+
 
 
 if(isset($_POST['decisionRec'])){
@@ -87,7 +90,6 @@ $conn->close();
 <br><br><br><br>
 </body>
 </html>
-
 
 
 
