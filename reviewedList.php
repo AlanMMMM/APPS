@@ -30,7 +30,7 @@
 </form>
 <br><br><br><br><br>
 
-<form style="text-align: center;" action="reviewing.php" method="post">
+<form style="text-align: center;" action="decisionMaking.php" method="post">
     Applicant UID: <input type="text" name="search"><br>
     <input type="submit" name="goSearch" value="search" />
 
