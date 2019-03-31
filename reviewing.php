@@ -12,7 +12,7 @@ if(isset($_POST['search'])){
      $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
     $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) LIKE '%$searchq%' AND A.uid=B.uid AND A.app_status='completed'";
     $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
-    echo $sResult->num_rows;
+    
     while($sRow = $sResult->fetch_assoc()) {
         echo "Personal Information"."<br>";
         echo " - uid: ". $sRow["uid"]."<br>";
