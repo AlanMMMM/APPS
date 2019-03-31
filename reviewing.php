@@ -1,4 +1,9 @@
-<?php
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2 style="text-align:center;"> Now please make recommendation</h2>
+    <?php
 $servername= "localhost";
 $username = "amstg";
 $password = "seas";
@@ -75,10 +80,6 @@ while($oRow = $oResult->fetch_assoc()){
 $conn->close();
 ?>
 
-<!DOCTYPE html>
-<html>
-<body>
-<h2 style="text-align:center;"> Now please make recommendation</h2>
 <form style="text-align: center;" action="makeRec.php" method="post">
     Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid  <input type="text" name="decisionRec"><br>
     <input type="submit" value=">>" />
