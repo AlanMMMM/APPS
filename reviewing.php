@@ -71,13 +71,6 @@ while($oRow = $oResult->fetch_assoc()){
     echo " - recommendation letter received?". $oRow["rec_received"];
 }
 
-
-
-
-
-
-
-$conn->close();
 ?>
 
 <form style="text-align: center;" action="makeRec.php" method="post">
