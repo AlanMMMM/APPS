@@ -21,6 +21,7 @@ if ($conn->connect_error) {
 }
  if(isset($_POST['goSelect'])){
     $selectq=$_POST['selection'];
+     echo $selectq;
     $oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(A.uid AS CHAR) ='$selectq' AND A.uid=B.uid";
     $oResult= $conn->query($oQuery) or die($mysqli->error);
     echo $sResult->num_rows;
