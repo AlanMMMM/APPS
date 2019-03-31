@@ -70,17 +70,7 @@ while($oRow = $oResult->fetch_assoc()){
 
 
 
-if(isset($_POST['decisionRec'])){
-    $addingq=$_POST['decisionRec'];
-    $aQuery = "UPDATE application SET app_rec='$addingq', app_status='reviewed' WHERE uid='$q' OR uid='$searchq'";
-    if($conn->query($aQuery)==TRUE) {
-        echo "decision recommendation updated successfully";
-    }else{
-        echo "failed to make decision recommendation:" . $conn->error;
-    }
-}else{
-    echo "decision recommendation not made";
-}
+
 
 $conn->close();
 ?>
@@ -89,7 +79,7 @@ $conn->close();
 <html>
 <body>
 <h2 style="text-align:center;"> Now please make recommendation</h2>
-<form style="text-align: center;" action="" method="post">
+<form style="text-align: center;" action="makeRec.php" method="post">
     Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid  <input type="text" name="decisionRec"><br>
     <input type="submit" value=">>" />
 </form>
