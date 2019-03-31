@@ -52,9 +52,9 @@ if(isset($_POST['goSearch'])){
     }}else{
     echo "Applicant Not Found";
 }
-} else if(isset($_POST['select'])){
-    $selectq=$_POST['applicantSelection'];
-    $oQuery= "SELECT * FROM applicant A AND application B WHERE CAST B.uid=$q AND A.uid=B.uid";
+} else if(isset($_POST['goSelect'])){
+    $selectq=$_POST['selection'];
+    $oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(A.uid AS CHAR) LIKE '%$selectq%' AND A.uid=B.uid";
     $oResult= $conn->query($oQuery) or die($mysqli->error);
     echo $sResult->num_rows;
     while($oRow = $oResult->fetch_assoc()){
@@ -76,7 +76,7 @@ if(isset($_POST['goSearch'])){
         echo " - transcript received?". $oRow["transcript_received"];
         echo " - recommendation letter received?". $oRow["rec_received"];
     }
-} 
+}
 
 ?>
 
