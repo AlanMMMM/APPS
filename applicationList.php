@@ -19,7 +19,7 @@ $dbname = "amstg";
     die("Connection failed: " . $conn->connect_error);
     }
     $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='completed'";
-    $result = $conn->query($query);
+    $result = $conn->query($query) or die("mysql error".$mysqli->error);
     while($row = mysqli_fetch_assoc($result)){
          echo "<option value=\"\">" . $row['uid'] . "</option>";
         }
