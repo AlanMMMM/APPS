@@ -34,7 +34,7 @@ $dbname = "amstg";
 
 <form style="text-align: center;" action="reviewing.php" method="post">
     Applicant UID: <input type="text" name="search"><br>
-                   <input type="submit" value=">>" />
+                   <input type="submit" name="goSearch" value=">>" />
 
 
 </form>
