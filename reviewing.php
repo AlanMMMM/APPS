@@ -20,7 +20,7 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['search'])){
+if(isset($_POST['goSearch'])){
     $searchq = $_POST['search'];
      $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
     $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) LIKE '%$searchq%' AND A.uid=B.uid AND A.app_status='completed'";
@@ -55,8 +55,9 @@ if(isset($_POST['search'])){
 }
 
 
-$q = isset($_GET['applicant'])? htmlspecialchars($_GET['applicant']) : '';
-$oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(B.uid AS CHAR)='$q' AND A.uid=B.uid";
+if(isset($_POST['select'])){
+    $selectq=$_POST['applicantSelection'];
+$oQuery= "SELECT * FROM applicant A AND application B WHERE CAST B.uid=$q AND A.uid=B.uid";
 $oResult= $conn->query($oQuery) or die($mysqli->error);
 echo $sResult->num_rows;
 while($oRow = $oResult->fetch_assoc()){
@@ -78,7 +79,7 @@ while($oRow = $oResult->fetch_assoc()){
     echo " - transcript received?". $oRow["transcript_received"];
     echo " - recommendation letter received?". $oRow["rec_received"];
 }
-
+}
 ?>
 
 
