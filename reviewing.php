@@ -81,8 +81,8 @@ $conn->close();
 ?>
 
 <form style="text-align: center;" action="makeRec.php" method="post">
-    Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid  <input type="text" name="decisionRec"><br>
-    <input type="submit" value=">>" />
+    Decision Recommendation: <input type="text" name="decisionRec"><br>
+    <input type="submit" value=">>" >
 </form>
 <br><br><br><br>
 </body>
