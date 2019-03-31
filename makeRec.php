@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 if(isset($_POST['decisionRec']&& $_POST['decisionRecUID'])){
     $addingq=$_POST['decisionRec'];
     $addingqUID=$_POST['decisionRecUID'];
-    $aQuery = "UPDATE applicant A SET A.app_rec=$addingq, A.app_status='reviewed' WHERE A.uid=$addingqUID";
+    $aQuery = "UPDATE applicant A SET A.app_rec='$addingq', A.app_status='reviewed' WHERE A.uid='$addingqUID'";
     $aResult = $conn->query($aQuery) or die("mysql error".$mysqli->error);
     if($aResult==TRUE) {
         echo "decision recommendation updated successfully";
