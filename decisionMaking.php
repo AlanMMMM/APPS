@@ -4,7 +4,7 @@
 <h2 style="text-align:center;"> Now please make recommendation</h2>
 <form style="text-align: center;" action="makeDec.php" method="post">
     Student UID: <input type="number" name="decisionUID"><br>
-    Decision: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" name="decisionRec" min="1" max="4"><br>
+    Decision: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" name="decision" min="1" max="4"><br>
 
     <input type="submit" value=">>" >
 </form>
