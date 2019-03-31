@@ -28,7 +28,7 @@ $dbname = "amstg";
 ?>
     </select>
     <br><br>
-    <input type="submit" value="select" />
+    <input type="submit" name="select" value="select" />
 </form>
 <br><br><br><br><br>
 
