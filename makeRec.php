@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 if(isset($_POST['decisionRec'])){
     $addingq=$_POST['decisionRec'];
-    $aQuery = "UPDATE application A SET A.app_rec=$addingq, app_status='reviewed' WHERE uid='$q' OR uid='$searchq'";
+    $aQuery = "UPDATE application A SET A.app_rec=$addingq, A.app_status='reviewed' WHERE A.uid=1 OR A.uid='$searchq'";
     if($conn->query($aQuery)==TRUE) {
         echo "decision recommendation updated successfully";
     }else{
