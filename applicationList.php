@@ -27,7 +27,6 @@ $dbname = "amstg";
         $conn->close();
 ?>
     </select>
-    />
     <br><br>
     <input type="submit" value="select" />
 </form>
