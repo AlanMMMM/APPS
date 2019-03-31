@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 if(isset($_POST['decisionRec'])){
     $addingq=$_POST['decisionRec'];
-    $aQuery = "UPDATE application SET app_rec='$addingq', app_status='reviewed' WHERE uid='$q' OR uid='$searchq'";
+    $aQuery = "UPDATE application SET app_rec=$addingq, app_status='reviewed' WHERE uid='$q' OR uid='$searchq'";
     if($conn->query($aQuery)==TRUE) {
         echo "decision recommendation updated successfully";
     }else{
@@ -27,9 +27,8 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <body>
-<h2 style="text-align:center;"> Now please make recommendation</h2>
 <form style="text-align: center;" action="applicationList.php" method="post">
-    <input type="submit" value="GO BACK" />
+    Now you can go back: <input type="submit" value="GO BACK" />
 </form>
 <br><br><br><br>
 </body>
