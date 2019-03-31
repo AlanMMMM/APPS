@@ -8,6 +8,7 @@
 
 
 <form style="text-align:center;" action="reviewing.php">
+<input type="option", value="
 <?php
 $servername= "localhost";
 $username = "amstg";
@@ -30,7 +31,7 @@ $dbname = "amstg";
 
         $opt .="</select>";
         $conn->close();
-?>
+?>" />
     <br><br>
     <input type="submit" value="select" />
 </form>
