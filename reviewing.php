@@ -47,9 +47,12 @@ if ($conn->connect_error) {
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
         $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) ='$searchq' AND A.uid=B.uid AND A.app_status='completed'";
+        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) = '$searchq' AND A.uid=B.uid AND A.app_status='completed'";
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
-
+        if($sResult->num_rows==0)
+        {
+            echo "No Applicant Found";
+        }else{
         while($sRow = $sResult->fetch_assoc()) {
             echo "Personal Information"."<br>";
             echo " - uid: ". $sRow["uid"]."<br>";
@@ -73,7 +76,7 @@ if ($conn->connect_error) {
             echo "Application Material"."<br>";
             echo " - transcript received? ". $sRow["transcript_received"]."<br>";
             echo " - recommendation letter received? ". $sRow["rec_received"]."<br>";
-        }}else{
+        }}}else{
         echo "Applicant Not Found";
     }
 }
@@ -83,5 +86,10 @@ if ($conn->connect_error) {
 
 </body>
 </html>
+
+
+
+
+
 
 
