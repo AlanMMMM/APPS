@@ -3,7 +3,13 @@
 <html>
 <body>
 <h2 style="text-align:center;"> Now please make recommendation</h2>
-    <?php
+    <form style="text-align: center;" action="makeRec.php" method="post">
+    Decision Recommendation: <input type="text" name="decisionRec"><br>
+    <input type="submit" value=">>" >
+</form>
+<br><br><br><br>
+    
+<?php
 $servername= "localhost";
 $username = "amstg";
 $password = "seas";
@@ -73,11 +79,7 @@ while($oRow = $oResult->fetch_assoc()){
 
 ?>
 
-<form style="text-align: center;" action="makeRec.php" method="post">
-    Decision Recommendation: <input type="text" name="decisionRec"><br>
-    <input type="submit" value=">>" >
-</form>
-<br><br><br><br>
+
 </body>
 </html>
 
