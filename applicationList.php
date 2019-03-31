@@ -8,7 +8,7 @@
 
 
 <form style="text-align:center;" action="reviewing.php">
-<input type="option", value="
+<select name="applicantSelection">
 <?php
 $servername= "localhost";
 $username = "amstg";
@@ -20,18 +20,14 @@ $dbname = "amstg";
     }
     $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='completed'";
     $result = $conn->query($query);
-
-    $opt = "<select name='applicant'>";
-
-        while($row = mysqli_fetch_assoc($result)){
-
-        $opt .="<option value='{$row['uid']}'>{$row['uid']}</option>";
+    while($row = mysqli_fetch_assoc($result)){
+         echo "<option value=\"\">" . $row['uid'] . "</option>";
         }
 
-
-        $opt .="</select>";
         $conn->close();
-?>" />
+?>
+    </select>
+    />
     <br><br>
     <input type="submit" value="select" />
 </form>
