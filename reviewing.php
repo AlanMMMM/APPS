@@ -19,6 +19,8 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+    $selectq=$_POST['selection'];
+    echo "selection is ".$selectq;
  if(isset($_POST['goSelect'])){
     $selectq=$_POST['selection'];
      $selectq = preg_replace("#[^0-9a-z]#i","",$selectq);
