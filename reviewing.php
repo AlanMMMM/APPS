@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
    
- if(isset($_POST['goSelect'])){
+ if(isset($_GET['goSelect'])){
     $selectq=$_GET['selection'];
      $selectq = preg_replace("#[^0-9a-z]#i","",$selectq);
      echo "selection is ".$selectq;
@@ -46,7 +46,7 @@ if ($conn->connect_error) {
         echo " - transcript received?". $oRow["transcript_received"];
         echo " - recommendation letter received?". $oRow["rec_received"];
     }
-}else if(isset($_POST['goSearch'])){
+}else if(isset($_GET['goSearch'])){
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
         $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
