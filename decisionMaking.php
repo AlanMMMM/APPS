@@ -20,10 +20,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
  if(isset($_POST['goSelect'])){
-    $selectq=$_POST['selection'];
-     $selectq = preg_replace("#[^0-9a-z]#i","",$selectq);
-     echo "selection is ".$selectq;
-    $oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(A.uid AS CHAR) ='$selectq' AND A.uid=B.uid";
+    $selectq=$_GET['selection'];
+     
+    $oQuery= "SELECT * FROM applicant A, application B WHERE A.uid=$selectq AND A.uid=B.uid";
+     
+    $oResult= $conn->query($oQuery) or die($mysqli->error);
     $oResult= $conn->query($oQuery) or die($mysqli->error);
     echo $sResult->num_rows;
     while($oRow = $oResult->fetch_assoc()){
