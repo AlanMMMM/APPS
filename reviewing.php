@@ -26,7 +26,7 @@ if ($conn->connect_error) {
     $oQuery= "SELECT * FROM applicant A AND application B WHERE A.uid=$selectq AND A.uid=B.uid";
      echo $oQuery;
     $oResult= $conn->query($oQuery) or die($mysqli->error);
-    echo $sResult->num_rows;
+    echo $sResult;
     while($oRow = $oResult->fetch_assoc()){
         echo " - uid". $oRow["uid"];
         echo " - first name". $oRow["first_name"];
