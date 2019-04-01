@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2 style="text-align:center;"> Now please make recommendation</h2>
+<h2 style="text-align:center;"> Now please make decision</h2>
 <form style="text-align: center;" action="makeDec.php" method="post">
     Student UID: <input type="number" name="decisionUID"><br>
-    Decision: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" name="decision" min="1" max="4"><br>
+    Decision: Type 1 for rejection, 2 for admission without aid, and 3 for admission with aid <br><input type="number" name="decision" min="1" max="4"><br>
 
     <input type="submit" value=">>" >
 </form>
@@ -49,7 +49,7 @@ if ($conn->connect_error) {
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
         $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) = '$searchq' AND A.uid=B.uid AND A.app_status='completed'";
+        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) = '$searchq' AND A.uid=B.uid AND A.app_status='reviewed'";
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
         if($sResult->num_rows==0)
         {
