@@ -24,6 +24,7 @@ if ($conn->connect_error) {
     $selectq=$_GET['selection'];
      echo "selection is ".$selectq;
     $oQuery= "SELECT * FROM applicant A AND application B WHERE A.uid=$selectq AND A.uid=B.uid";
+     echo $oQuery;
     $oResult= $conn->query($oQuery) or die($mysqli->error);
     echo $sResult->num_rows;
     while($oRow = $oResult->fetch_assoc()){
