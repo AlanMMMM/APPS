@@ -20,7 +20,8 @@
         $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='reviewed'";
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
         while($row = mysqli_fetch_assoc($result)){
-            echo "<option value=\"\">" . $row['uid'] . "</option>";
+            $rowUid=$row['uid'];
+            echo "<option value=\"$rowUid\">". $rowUid. $row['first_name'] ." ".['last_name']. "</option>";
         }
         $conn->close();
         ?>
