@@ -22,7 +22,7 @@
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
         while($row = mysqli_fetch_assoc($result)){
             $rowUid=$row['uid'];
-            echo "<option value=$rowUid" . $rowUid . "</option>";
+            echo "<option value=$rowUid>". $rowUid . "</option>";
         }
         $conn->close();
         ?>
