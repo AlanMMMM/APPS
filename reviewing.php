@@ -22,7 +22,6 @@ if ($conn->connect_error) {
    
  if(isset($_GET['goSelect'])){
     $selectq=$_GET['selection'];
-     $selectq = preg_replace("#[^0-9a-z]#i","",$selectq);
      echo "selection is ".$selectq;
     $oQuery= "SELECT * FROM applicant A AND application B WHERE A.uid=$selectq AND A.uid=B.uid";
     $oResult= $conn->query($oQuery) or die($mysqli->error);
