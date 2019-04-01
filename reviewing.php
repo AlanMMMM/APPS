@@ -22,9 +22,9 @@ if ($conn->connect_error) {
    
  if(isset($_GET['goSelect'])){
     $selectq=$_GET['selection'];
-     echo "selection is ".$selectq;
+     
     $oQuery= "SELECT * FROM applicant A, application B WHERE A.uid=$selectq AND A.uid=B.uid";
-     echo $oQuery;
+     
     $oResult= $conn->query($oQuery) or die($mysqli->error);
     
     while($oRow = $oResult->fetch_assoc()){
