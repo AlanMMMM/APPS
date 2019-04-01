@@ -19,10 +19,9 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-    $selectq=$_GET['selection'];
-    echo "selection is ".$selectq;
+   
  if(isset($_POST['goSelect'])){
-    $selectq=$_POST['selection'];
+    $selectq=$_GET['selection'];
      $selectq = preg_replace("#[^0-9a-z]#i","",$selectq);
      echo "selection is ".$selectq;
     $oQuery= "SELECT * FROM applicant A AND application B WHERE CAST(A.uid AS CHAR) ='$selectq' AND A.uid=B.uid";
