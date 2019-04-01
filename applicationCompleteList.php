@@ -23,7 +23,7 @@
         
         while($row = mysqli_fetch_assoc($result)){
             $rowUid=$row['uid'];
-            echo "<option value=\"$rowUid\">"."UID: " .$rowUid." First Name: " $row[first_name]. "Last Name" .$row[last_name] . "</option>";
+            echo "<option value=\"$rowUid\">"."UID: " .$rowUid." First Name: ". $row[first_name]. " Last Name: " .$row[last_name] . "</option>";
         }
         $conn->close();
         ?>
