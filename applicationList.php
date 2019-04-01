@@ -21,7 +21,8 @@
         $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='completed'";
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
         while($row = mysqli_fetch_assoc($result)){
-            echo "<option value=$row['uid']>" . $row['uid'] . "</option>";
+            $rowUid=$row['uid'];
+            echo "<option value=$rowUid" . $rowUid . "</option>";
         }
         $conn->close();
         ?>
