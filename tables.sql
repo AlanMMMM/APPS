@@ -29,22 +29,29 @@ CREATE TABLE applicant(
   first_name varchar(15) not null,
   last_name varchar(15) not null,
   uid int,
-  app_status varchar(15) not null default 'In progress',
+  app_status varchar(25) not null,
   transcript_received varchar(15) not null default 'No',
   rec_received varchar(15) not null default 'No',
-  decision int,
+  decision int default 0,
   app_rec int,
   app_rec_advisor_uid int,
+  app_rec_comment varchar(40),
+  app_deficiency_courses varchar(40),
+  reason_for_reject varchar(1),
+  
   FOREIGN KEY (uid) REFERENCES user(uid)
   );
   
 
   CREATE TABLE recommendation(
   rid int auto_increment,
-  rec_fname varchar(15),
-  rec_lname varchar(15),
-  rec_title varchar(15),
-  rec_letter varchar(500),
+  rec_fname varchar(25),
+  rec_lname varchar(25),
+  rec_title varchar(25),
+  rec_letter varchar(4096),
+  rec_rating int,
+  rec_generic varchar(1),
+  rec_credible varchar(1),
   uid int,
   PRIMARY KEY(rid)
   );
@@ -62,30 +69,41 @@ CREATE TABLE application(
   GRE_quantitative int,
   GRE_total int,
   bachelor_school varchar(25),
-  bachelor_degree varchar(10),
-  bachelor_major varchar(15),
+  bachelor_degree varchar(25),
+  bachelor_major varchar(25),
   bachelor_year int,
   bachelor_gpa double,
   area_of_interest varchar(25),
   degree_seeking varchar(25),
-  rid int,
-  FOREIGN KEY(uid) REFERENCES user(uid),
-  FOREIGN KEY(rid) REFERENCES recommendation(rid)
+  FOREIGN KEY(uid) REFERENCES user(uid)
   );
   
-  
-  
-INSERT INTO user (username,password,role) VALUES ('rick','12345','student');
-INSERT INTO user (username,password,role) VALUES ('tom','12345','student');
-INSERT INTO user (username,password,role) VALUES ('tony','12345','student');
-INSERT INTO user (username,password,role) VALUES ('alan','12345','faculty');
-INSERT INTO user (username,password,role) VALUES ('chief','117117','student');
+-- Required pre populated data  
+INSERT INTO user VALUES('jlennon','54321','student',55555555);  
+INSERT INTO application VALUES (55555555,'111111111','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL','180','180','360','GWU','BS','CS','2019',3.0,'CS','master');
+INSERT INTO applicant VALUES ('John','Lennon',55555555,'In progress','Yes','Yes',NULL,NULL,NULL);
+
+INSERT INTO user VALUES('rstarr','54321','student',66666666);
+INSERT INTO user (username,password,role) VALUES ('Narahari','12345','faculty');
+INSERT INTO user (username,password,role) VALUES ('admin','117117','administrator');
+INSERT INTO user (username,password,role) VALUES ('secretary','117117','GS');
+INSERT INTO user (username,password,role) VALUES ('chair','117117','CAC');  
+
+
+-- Other testing data
+INSERT INTO user (username,password,role,uid) VALUES ('rick','12345','student',1);
+INSERT INTO user (username,password,role,uid) VALUES ('tom','12345','student',2);
+INSERT INTO user (username,password,role,uid) VALUES ('tony','12345','student',3);
+INSERT INTO user (username,password,role,uid) VALUES ('alan','12345','faculty',4);
+INSERT INTO user (username,password,role,uid) VALUES ('chief','117117','student',5);
+INSERT INTO user (username,password,role,uid) VALUES ('kevin','117117','administrator',6);
 INSERT INTO faculty VALUES ('alan','turing',4,'reviewer');
 INSERT INTO applicant VALUES ('rick','lee',1,'completed','Yes','Yes',NULL,NULL,NULL);
 INSERT INTO applicant VALUES ('tom','ford',2,'completed','Yes','Yes',NULL,NULL,NULL);
 INSERT INTO applicant VALUES ('tony','allen',3,'pending','Yes','No',NULL,NULL,NULL);
-INSERT INTO recommendation (rec_fname,rec_lname,rec_title,rec_letter,uid) VALUES ('Tim','Wood','professor','Rick is a great student',1);
-INSERT INTO recommendation (rec_fname,rec_lname,rec_title,rec_letter,uid) VALUES ('Tim','Wood','professor','Tom is a great student as well',2);
-INSERT INTO application VALUES (1,'123456789','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL','180','180','360','GWU','BS','CS','2019',3.0,'CS','master',1);
-INSERT INTO application VALUES (2,'123456788','123 summer rd','washington','DC',20016,'abcdef@abcdef.com','FALL','170','170','340','GWU','BA','CS','2019',4.0,'CS','phd',2);
-INSERT INTO application VALUES (3,'123456787','123 fall blvd','miami','FL',30002,'abcdefg@abcdefg.com','FALL','160','160','320','GWU','BS','MATH','2019',3.5,'CS','phd',NULL);
+INSERT INTO recommendation VALUES (1,'Tim','Wood','professor','Rick is a great student',1);
+INSERT INTO recommendation VALUES (2,'Tim','Wood','professor','Tom is a great student as well',2);
+INSERT INTO application VALUES (1,'123456789','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL','180','180','360','GWU','BS','CS','2019',3.0,'CS','master');
+INSERT INTO application VALUES (2,'123456788','123 summer rd','washington','DC',20016,'abcdef@abcdef.com','FALL','170','170','340','GWU','BA','CS','2019',4.0,'CS','phd');
+INSERT INTO application VALUES (3,'123456787','123 fall blvd','miami','FL',30002,'abcdefg@abcdefg.com','FALL','160','160','320','GWU','BS','MATH','2019',3.5,'CS','phd');
+
