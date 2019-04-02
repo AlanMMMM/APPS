@@ -6,7 +6,7 @@
     Student UID: <input type="number" name="decisionUID"><br>
     Decision: Type 1 for rejection, 2 for admission without aid, and 3 for admission with aid <br><input type="number" name="decision" min="1" max="4"><br>
 
-    <input type="submit" value=">>" >
+    <input type="submit" value="submit" >
 </form>
 <br><br><br><br>
 
@@ -23,10 +23,9 @@ if ($conn->connect_error) {
     $selectq=$_GET['selection'];
      
     $oQuery= "SELECT * FROM applicant A, application B WHERE A.uid=$selectq AND A.uid=B.uid";
-     
+
     $oResult= $conn->query($oQuery) or die($mysqli->error);
-    $oResult= $conn->query($oQuery) or die($mysqli->error);
-    echo $sResult->num_rows;
+  
     while($oRow = $oResult->fetch_assoc()){
         echo " - uid". $oRow["uid"];
         echo " - first name". $oRow["first_name"];
