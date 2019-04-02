@@ -23,7 +23,7 @@ if(isset($_POST['decisionRec'])&& isset($_POST['decisionRecUID'])){
     if($aResult==TRUE) {
         echo "decision recommendation updated successfully";
     }else{
-        echo "failed to make decision recommendation:" . $conn->error;
+        echo "failed to make decision recommendation, please try again";
     }}
 }
 
