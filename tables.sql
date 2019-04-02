@@ -81,7 +81,7 @@ CREATE TABLE application(
 -- Required pre populated data  
 INSERT INTO user VALUES('jlennon','54321','student',55555555);  
 INSERT INTO application VALUES (55555555,'111111111','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL','180','180','360','GWU','BS','CS','2019',3.0,'CS','master');
-INSERT INTO applicant VALUES ('John','Lennon',55555555,'In progress','Yes','Yes',NULL,NULL,NULL);
+INSERT INTO applicant VALUES ('John','Lennon',55555555,'Pending','Yes','Yes',NULL,NULL,NULL,NULL,NULL,NULL);
 
 INSERT INTO user VALUES('rstarr','54321','student',66666666);
 INSERT INTO user (username,password,role) VALUES ('Narahari','12345','faculty');
