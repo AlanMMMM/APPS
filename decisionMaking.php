@@ -3,8 +3,8 @@
 <body>
 <h2 style="text-align:center;"> Now please make a decision</h2>
 <form style="text-align: center;" action="makeDec.php" method="post">
-    Student UID: <input type="number" name="decisionUID"><br>
-    Decision: Type 1 for admission with aid, 2 for admission, and 3 for rejection <br><input type="number" name="decision" min="1" max="4"><br>
+    Student UID: <input type="number" required="required" name="decisionUID"><br>
+    Decision: Type 1 for admission with aid, 2 for admission, and 3 for rejection <br><input type="number" required="required" name="decision" min="1" max="4"><br>
 
     <input type="submit" value="submit" >
 </form>
@@ -19,8 +19,8 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
- if(isset($_GET['goSelect'])){
-    $selectq=$_GET['selection'];
+ if(isset($_POST['goSelect'])){
+    $selectq=$_POST['selection'];
      
     $oQuery= "SELECT * FROM applicant A, application B WHERE A.uid=$selectq AND A.uid=B.uid";
 
@@ -53,8 +53,8 @@ if ($conn->connect_error) {
 }else if(isset($_POST['goSearch'])){
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
-        $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) = '$searchq' AND A.uid=B.uid AND A.app_status='reviewed'";
+      
+        $sQuery = "SELECT * FROM applicant A,application B WHERE A.uid= '$searchq' AND A.uid=B.uid AND A.app_status='reviewed'";
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
         if($sResult->num_rows==0)
         {
@@ -83,9 +83,7 @@ if ($conn->connect_error) {
             echo "Application Material"."<br>";
             echo " - transcript received? ". $sRow["transcript_received"]."<br>";
             echo " - recommendation letter received? ". $sRow["rec_received"]."<br>";
-        }}}else{
-        echo "Applicant Not Found";
-    }
+        }}}
 }
 
 ?>
