@@ -11,8 +11,14 @@ if ($conn->connect_error) {
 
 if(isset($_POST['decisionRec'])&& isset($_POST['decisionRecUID'])){
     $addingq=$_POST['decisionRec'];
+    $commentq=$_POST['decisionRecCom'];
+    $defq=$_POST['decisionRecDef'];
+    $recGenq=$_POST['recGen'];
+    $recCreq=$_POST['recCre'];
+    $recRatingq=$_POST['recRating'];
     $addingqUID=$_POST['decisionRecUID'];
-    $aQuery = "UPDATE applicant A SET A.app_rec='$addingq', A.app_status='reviewed' WHERE A.uid='$addingqUID'";
+    $rejReaq=$_POST['rejRea'];
+    $aQuery = "UPDATE applicant A, recommendation B SET A.app_rec='$addingq', A.reason_for_reject='$rejReaq',A.app_rec_comment='$commentq', A.app_deficiency_courses='$defq', B.rec_rating='$recRatingq', B.rec_generic='$recGenq', B.rec_credible='$recCreq' A.app_status='reviewed' WHERE A.uid='$addingqUID' AND A.uid=B.uid";
     $check="SELECT * from applicant A WHERE A.uid='$addingqUID'";
     $checkResult=$conn->query($check) or die("mysql error".$mysqli->error);
     if($checkResult->num_rows==0){
