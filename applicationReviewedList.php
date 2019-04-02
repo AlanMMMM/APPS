@@ -19,10 +19,9 @@
         }
         $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='reviewed'";
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
-        if(result.num_rows==0)
-        {
-            echo "No applicant being reviewed by reviewer yet";
-        }
+       
+            echo mysqli_fetch_assoc($result);
+      
         while($row = mysqli_fetch_assoc($result)){
             $rowUid=$row['uid'];
             echo "<option value=\"$rowUid\">"."UID: " .$rowUid." First Name: ". $row[first_name]. " Last Name: " .$row[last_name] . "</option>";
