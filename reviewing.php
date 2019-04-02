@@ -3,7 +3,7 @@
 <body>
 <h2 style="text-align:center;"> Now please make a decision recommendation</h2>
 <form style="text-align: center;" action="makeRec.php" method="post">
-    Student UID: <input type="number" required="required" name="decisionRecUID"><br>
+    Student UID: (please type in numbers) <input type="number" required="required" name="decisionRecUID"><br>
     Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" required="required" name="decisionRec" min="1" max="4"><br>
 
     <input type="submit" value="Submit" >
