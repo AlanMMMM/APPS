@@ -8,6 +8,7 @@
 
 <form style="text-align:center;" action="dataUpdating.php">
     <select name="selection">
+        <option disabled selected value> -- select an option -- </option>
         <?php
         $servername= "localhost";
         $username = "amstg";
