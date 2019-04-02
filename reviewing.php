@@ -20,8 +20,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
    
- if(isset($_GET['goSelect'])){
-    $selectq=$_GET['selection'];
+ if(isset($_POST['goSelect'])){
+    $selectq=$_POST['selection'];
      
     $oQuery= "SELECT * FROM applicant A, application B WHERE A.uid=$selectq AND A.uid=B.uid";
      
@@ -51,11 +51,11 @@ if ($conn->connect_error) {
             echo " - transcript received? ". $oRow["transcript_received"]."<br>";
             echo " - recommendation letter received? ". $oRow["rec_received"]."<br>";
     }
-}else if(isset($_GET['goSearch'])){
+}else if(isset($_POST['goSearch'])){
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
-        $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) = '$searchq' AND A.uid=B.uid AND A.app_status='completed'";
+        
+        $sQuery = "SELECT * FROM applicant A,application B WHERE A.uid = '$searchq' AND A.uid=B.uid AND A.app_status='completed'";
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
         if($sResult->num_rows==0)
         {
