@@ -7,7 +7,7 @@
 
 
 
-<form style="text-align:center;" action="reviewing.php">
+<form style="text-align:center;" action="reviewing.php" method="post">
     <select name="selection">
         <option disabled selected value> -- select an applicant -- </option>
         <?php
