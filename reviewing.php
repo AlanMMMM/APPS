@@ -1,50 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h2 style="text-align:center;"> Now please make a decision recommendation</h2>
-<form style="text-align: center;" action="makeRec.php" method="post">
-    Student UID: (please type in numbers) <input type="number" required="required" name="decisionRecUID"><br>
-    
-    Recommendation Letter Rating: (Worst=1, Best=5) <select name="recRating" required="required">
-                        <option disabled selected value> -- select a score -- </option>
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=1>3</option>
-                        <option value=2>4</option>
-                        <option value=1>5</option>
-                       </select><br>
-    Is the Recommendation Letter Generic? <select name="recGen" required="required">
-                        <option disabled selected value> -- select YES or NO -- </option>
-                        <option value="Y">Yes</option>
-                        <option value="N">No</option>                 
-                        </select><br>
-    Is the Recommendation Letter Credible? <select name="recCre" required="required">
-                        <option disabled selected value> -- select YES or NO -- </option>
-                        <option value="Y">Yes</option>
-                        <option value="N">No</option>                 
-                        </select><br>
-    Decision Recommendation: <select name="decisionRec" required="required">
-                     
-      <option disabled selected value> -- Make A Recommendation -- </option>
-                        <option value=1>Reject</option>
-                        <option value=2>borderline</option>   
-                        <option value=3>admit without aid</option>
-                        <option value=4>admit with aid</option> 
-                        </select><br>
-    Reason for Rejection: <select name="rejRea">
-                           <option disabled selected value> -- Choose A Reason -- </option>
-                        <option value="A">Incomplete Record</option>
-                        <option value="B">Does not meet minimum Requirements</option>   
-                        <option value="C">Problems with Letters</option>
-                        <option value="D">Not competitive</option> 
-                        <option value="E">Other reasons</option>
-                        </select><br>
-    Deficiency Courses if Any: (Max:40 Charactors)<input type="text" name="decisionRecDef" maxlength=40><br>
-    Reviewer Comment: (Max:40 Charactors) <input type="text" name="decisionRecCom" maxlength=40><br>
-    
-    <input type="submit" value="Submit" >
-</form>
-<br><br><br><br>
 
 <?php
 $servername= "localhost";
@@ -124,6 +77,56 @@ if ($conn->connect_error) {
 }
 $conn->close();
 ?>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2 style="text-align:center;"> Now please make a decision recommendation</h2>
+<form style="text-align: center;" action="makeRec.php" method="post">
+    Student UID: (please type in numbers) <input type="number" required="required" name="decisionRecUID"><br>
+    
+    Recommendation Letter Rating: (Worst=1, Best=5) <select name="recRating" required="required">
+                        <option disabled selected value> -- select a score -- </option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=1>3</option>
+                        <option value=2>4</option>
+                        <option value=1>5</option>
+                       </select><br>
+    Is the Recommendation Letter Generic? <select name="recGen" required="required">
+                        <option disabled selected value> -- select YES or NO -- </option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>                 
+                        </select><br>
+    Is the Recommendation Letter Credible? <select name="recCre" required="required">
+                        <option disabled selected value> -- select YES or NO -- </option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>                 
+                        </select><br>
+    Decision Recommendation: <select name="decisionRec" required="required">
+                     
+      <option disabled selected value> -- Make A Recommendation -- </option>
+                        <option value=1>Reject</option>
+                        <option value=2>borderline</option>   
+                        <option value=3>admit without aid</option>
+                        <option value=4>admit with aid</option> 
+                        </select><br>
+    Reason for Rejection: <select name="rejRea">
+                           <option disabled selected value> -- Choose A Reason -- </option>
+                        <option value="A">Incomplete Record</option>
+                        <option value="B">Does not meet minimum Requirements</option>   
+                        <option value="C">Problems with Letters</option>
+                        <option value="D">Not competitive</option> 
+                        <option value="E">Other reasons</option>
+                        </select><br>
+    Deficiency Courses if Any: (Max:40 Charactors)<input type="text" name="decisionRecDef" maxlength=40><br>
+    Reviewer Comment: (Max:40 Charactors) <input type="text" name="decisionRecCom" maxlength=40><br>
+    
+    <input type="submit" value="Submit" >
+</form>
+<br><br><br><br>
+
 
 
 </body>
