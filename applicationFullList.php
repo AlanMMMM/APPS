@@ -6,8 +6,8 @@
 
 
 
-<form style="text-align:center;" action="dataUpdating.php">
-    <select name="selection">
+<form style="text-align:center;" action="dataUpdating.php" method="post">
+    <select name="selection" required="required">
         <option disabled selected value> -- select an option -- </option>
         <?php
         $servername= "localhost";
@@ -34,7 +34,7 @@
 <br><br><br><br><br>
 
 <form style="text-align: center;" action="dataUpdating.php" method="post">
-    Applicant UID: <input type="text" name="search"><br>
+    Applicant UID: <input type="text" required="required" name="search"><br>
     <input type="submit" name="goSearch" value="search" />
 
 
