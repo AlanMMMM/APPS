@@ -6,8 +6,8 @@
 
 
 
-<form style="text-align:center;" action="decisionMaking.php">
-    <select name="selection">
+<form style="text-align:center;" action="decisionMaking.php" method="post">
+    <select name="selection" required="required">
         <option disabled selected value> -- select an option -- </option>
         <?php
         $servername= "localhost";
@@ -35,8 +35,8 @@
 </form>
 <br><br><br><br><br>
 
-<form style="text-align: center;" action="decisionMaking.php" method="post">
-    Applicant UID: <input type="text" name="search"><br>
+<form style="text-align: center;" action="decisionMaking.php" required="required" method="post">
+    Applicant UID:please type in numbers <input type="number" name="search"><br>
     <input type="submit" name="goSearch" value="search" />
 
 
