@@ -20,7 +20,7 @@
         $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='reviewed'";
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
        
-            echo mysqli_fetch_assoc($result);
+            echo "result".mysqli_fetch_assoc($result);
       
         while($row = mysqli_fetch_assoc($result)){
             $rowUid=$row['uid'];
