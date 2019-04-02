@@ -6,7 +6,7 @@
 
 
 
-<form style="text-align:center;" action="reviewing.php">
+<form style="text-align:center;" action="dataUpdating.php">
     <select name="selection">
         <?php
         $servername= "localhost";
@@ -17,7 +17,7 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='completed'";
+        $query = "SELECT uid, first_name, last_name FROM applicant";
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
         
         while($row = mysqli_fetch_assoc($result)){
@@ -32,7 +32,7 @@
 </form>
 <br><br><br><br><br>
 
-<form style="text-align: center;" action="reviewing.php" method="post">
+<form style="text-align: center;" action="dataUpdating.php" method="post">
     Applicant UID: <input type="text" name="search"><br>
     <input type="submit" name="goSearch" value="search" />
 
