@@ -7,7 +7,7 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_GET['decision'])&& isset($_GET['decisionUID'])){
+if(isset($_POST['decision'])&& isset($_POST['decisionUID'])){
     $addingq=$_POST['decision'];
     $addingqUID=$_POST['decisionUID'];
     $aQuery = "UPDATE applicant A SET A.decision='$addingq', A.app_status='decisionMade' WHERE A.uid='$addingqUID'";
