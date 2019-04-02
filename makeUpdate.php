@@ -7,7 +7,7 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_GET['transcriptSubmit']){
+if(isset($_GET['transcriptSubmit'])){
 if(isset($_GET['transcriptUpdate'])&& isset($_GET['transcriptUpdateUID'])){
     $transcriptq=$_POST['transcriptUpdate'];
     $transcriptqUID=$_POST['transcriptUpdateUID'];
@@ -22,7 +22,7 @@ if(isset($_GET['transcriptUpdate'])&& isset($_GET['transcriptUpdateUID'])){
     echo "No Applicant Found, transcript status update not made";
 }}
    
-if(isset($_GET['decisionSubmit']){
+if(isset($_GET['decisionSubmit'])){
 if(isset($_GET['decisionUpdate'])&& isset($_GET['decisionUpdateUID'])){
     $decisionq=$_POST['decisionUpdate'];
     $decisionqUID=$_POST['decisionUpdateUID'];
@@ -37,7 +37,7 @@ if(isset($_GET['decisionUpdate'])&& isset($_GET['decisionUpdateUID'])){
     echo "No Applicant Found, decision not made";
 }}
    
-if(isset($_GET['statusSubmit']){
+if(isset($_GET['statusSubmit'])){
 if(isset($_GET['statusUpdate'])&& isset($_GET['statusUpdateUID'])){
     $statusq=$_POST['statusUpdate'];
     $statusqUID=$_POST['statusUpdateUID'];
