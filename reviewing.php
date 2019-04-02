@@ -4,6 +4,7 @@
 <h2 style="text-align:center;"> Now please make a decision recommendation</h2>
 <form style="text-align: center;" action="makeRec.php" method="post">
     Student UID: (please type in numbers) <input type="number" required="required" name="decisionRecUID"><br>
+    
     Recommendation Letter Rating: (Worst=1, Best=5) <select name="recRating" required="required">
                         <option disabled selected value> -- select a score -- </option>
                         <option value=1>1</option>
@@ -23,6 +24,14 @@
                         <option value="N">No</option>                 
                         </select><br>
     Decision Recommendation: <select name="decisionRec" required="required">
+                        <option disabled selected value> -- Make A Recommendation -- </option>
+                        <option value="A">Incomplete Record</option>
+                        <option value="B">Does not meet minimum Requirements</option>   
+                        <option value="C">Problems with Letters</option>
+                        <option value="D">Not competitive</option> 
+                        <option value="E">Other reasons</option>
+                        </select><br>
+    Reason for Rejection: <select name="rejRea">
                         <option disabled selected value> -- Make A Recommendation -- </option>
                         <option value=1>Reject</option>
                         <option value=2>borderline</option>   
