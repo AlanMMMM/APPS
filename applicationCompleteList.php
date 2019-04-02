@@ -8,7 +8,7 @@
 
 
 <form style="text-align:center;" action="reviewing.php" method="post">
-    <select name="selection" required="required">
+    Only Applicants Who Completed Application <select name="selection" required="required">
         <option disabled selected value> -- select an applicant -- </option>
         <?php
         $servername= "localhost";
