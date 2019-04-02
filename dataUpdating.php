@@ -26,13 +26,13 @@ if ($conn->connect_error) {
             echo "Area of Interest: ". $oRow["area_of_interest"]."<br><br>";
             
             echo "Exams"."<br>";
-            echo "GRE     "."Verbal: ". $oRow["GRE_verbal"]."          "."Quantitative ".$oRow["GRE_quantitative"]."<br>";
+            echo "GRE &nbsp;&nbsp;&nbsp;"."Verbal: ". $oRow["GRE_verbal"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Quantitative ".$oRow["GRE_quantitative"]."<br>";
             echo "Year of Exam: ".$oRow["exam_year"]."<br>";
-            echo "GRE Advanced     "."Score: ".$oRow["GRE_score"]."          "."Subject: ".$oRow["GRE_subject"]."<br>";
-            echo "TOEFL Score: ".$oRow["TOEFL_score"]."     Year of Exam".$oRow["TOEFL_year"]."<br><br>";
+            echo "GRE Advanced &nbsp;&nbsp;&nbsp;"."Score: ".$oRow["GRE_score"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Subject: ".$oRow["GRE_subject"]."<br>";
+            echo "TOEFL Score: ".$oRow["TOEFL_score"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year of Exam".$oRow["TOEFL_year"]."<br><br>";
            
             echo "Prior Degrees"."<br>";
-            echo $oRow["bachelor_degree"]."          GPA: ".$oRow["bachelor_GPA"]."          Major: ".$oRow["bachelor_major"]."          Year: ".$oRow["bachelor_year"]."          University: ".$oRow["bachelor_school"]."<br><br>";
+            echo $oRow["bachelor_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$oRow["bachelor_GPA"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$oRow["bachelor_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$oRow["bachelor_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$oRow["bachelor_school"]."<br><br>";
     
             echo "Application Material"."<br>";
             echo "Transcript Received: ". $oRow["transcript_received"]."<br>";
@@ -63,13 +63,13 @@ if ($conn->connect_error) {
             echo "Area of Interest: ". $sRow["area_of_interest"]."<br><br>";
             
             echo "Exams"."<br>";
-            echo "GRE     "."Verbal: ". $sRow["GRE_verbal"]."          "."Quantitative ".$sRow["GRE_quantitative"]."<br>";
+            echo "GRE &nbsp;&nbsp;&nbsp;"."Verbal: ". $sRow["GRE_verbal"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Quantitative ".$sRow["GRE_quantitative"]."<br>";
             echo "Year of Exam: ".$sRow["exam_year"]."<br>";
-            echo "GRE Advanced     "."Score: ".$sRow["GRE_score"]."          "."Subject: ".$sRow["GRE_subject"]."<br>";
-            echo "TOEFL Score: ".$sRow["TOEFL_score"]."     Year of Exam".$sRow["TOEFL_year"]."<br><br>";
+            echo "GRE Advanced &nbsp;&nbsp;&nbsp;"."Score: ".$sRow["GRE_score"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Subject: ".$sRow["GRE_subject"]."<br>";
+            echo "TOEFL Score: ".$sRow["TOEFL_score"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year of Exam".$sRow["TOEFL_year"]."<br><br>";
            
             echo "Prior Degrees"."<br>";
-            echo $sRow["bachelor_degree"]."          GPA: ".$sRow["bachelor_GPA"]."          Major: ".$sRow["bachelor_major"]."          Year: ".$sRow["bachelor_year"]."          University: ".$sRow["bachelor_school"]."<br><br>";
+            echo $sRow["bachelor_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$sRow["bachelor_GPA"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$sRow["bachelor_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$sRow["bachelor_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$sRow["bachelor_school"]."<br><br>";
     
             echo "Application Material"."<br>";
             echo "Transcript Received: ". $sRow["transcript_received"]."<br>";
