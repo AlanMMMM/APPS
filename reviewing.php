@@ -59,7 +59,7 @@ if ($conn->connect_error) {
  if(isset($_POST['goSelect'])){
     $selectq=$_POST['selection'];
      
-    $oQuery = "SELECT * FROM applicant A, application B, recommendation C WHERE A.uid=$selectq AND A.uid=B.uid AND A.uid=C.uid" AND A.app_status="completed";
+    $oQuery = "SELECT * FROM applicant A, application B, recommendation C WHERE A.uid=$selectq AND A.uid=B.uid AND A.uid=C.uid AND A.app_status='completed'";
      
     $oResult= $conn->query($oQuery) or die($mysqli->error);
     
@@ -91,7 +91,7 @@ if ($conn->connect_error) {
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
         
-        $sQuery = "SELECT * FROM applicant A, application B, recommendation C WHERE A.uid=$selectq AND A.uid=B.uid AND A.uid=C.uid" AND A.app_status="completed";
+        $sQuery = "SELECT * FROM applicant A, application B, recommendation C WHERE A.uid=$searchq AND A.uid=B.uid AND A.uid=C.uid AND A.app_status='completed'";
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
         if($sResult->num_rows==0)
         {
