@@ -59,7 +59,7 @@ if ($conn->connect_error) {
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
         if($sResult->num_rows==0)
         {
-            echo "No Applicant Found";
+            echo "No Applicant Found or Applicant Doesn't Complete Application";
         }else{
         while($sRow = $sResult->fetch_assoc()) {
             echo "Personal Information"."<br>";
