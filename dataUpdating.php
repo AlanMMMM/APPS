@@ -86,7 +86,7 @@ $conn->close();
 <h2 style="text-align:center;"> Now please update</h2>
 <h3> Update Transcript Status</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID:please type in numbers <input type="number" required="required" name="transcriptUpdateUID">
+    Student UID: (please type in numbers) <input type="number" required="required" name="transcriptUpdateUID">
     Transcript Status: <select name="transcriptUpdate" required="required">
                         <option disabled selected value> -- select an option -- </option>
                         <option value="Yes">Transcript Received</option>
@@ -94,9 +94,10 @@ $conn->close();
                        </select><br>
     <input type="submit" name="transcriptSubmit" value="Update" >
 </form>
+    
 <h3> Update Final Decision</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID:please type in numbers <input type="number" required="required" name="decisionUpdateUID">
+    Student UID: (please type in numbers) <input type="number" required="required" name="decisionUpdateUID">
     Final Decision: <select name="decisionUpdate" required="required">
                         <option disabled selected value> -- select an option -- </option>
                         <option value=1>admission with aid</option>
@@ -105,9 +106,10 @@ $conn->close();
                        </select><br>
     <input type="submit" name="decisionSubmit" value="Update" >
 </form>
+    
 <h3> Update Application Status</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID:please type in numbers <input type="number" required="required" name="statusUpdateUID">
+    Student UID: (please type in numbers) <input type="number" required="required" name="statusUpdateUID">
     Application Status: <select name="statusUpdate" required="required">
                         <option disabled selected value> -- select an option -- </option>
                         <option value="pending">Pending:Missing required materials</option>
