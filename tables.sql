@@ -98,11 +98,11 @@ INSERT INTO user (username,password,role,uid) VALUES ('alan','12345','faculty',4
 INSERT INTO user (username,password,role,uid) VALUES ('chief','117117','student',5);
 INSERT INTO user (username,password,role,uid) VALUES ('kevin','117117','administrator',6);
 INSERT INTO faculty VALUES ('alan','turing',4,'reviewer');
-INSERT INTO applicant VALUES ('rick','lee',1,'completed','Yes','Yes',NULL,NULL,NULL);
-INSERT INTO applicant VALUES ('tom','ford',2,'completed','Yes','Yes',NULL,NULL,NULL);
-INSERT INTO applicant VALUES ('tony','allen',3,'pending','Yes','No',NULL,NULL,NULL);
-INSERT INTO recommendation VALUES (1,'Tim','Wood','professor','Rick is a great student',1);
-INSERT INTO recommendation VALUES (2,'Tim','Wood','professor','Tom is a great student as well',2);
+INSERT INTO applicant VALUES ('rick','lee',1,'completed','Yes','Yes',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO applicant VALUES ('tom','ford',2,'completed','Yes','Yes',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO applicant VALUES ('tony','allen',3,'pending','Yes','No',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO recommendation VALUES (1,'Tim','Wood','professor','Rick is a great student',0,NULL,NULL,1);
+INSERT INTO recommendation VALUES (2,'Tim','Wood','professor','Tom is a great student as well',0,NULL,NULL,2);
 INSERT INTO application VALUES (1,'123456789','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL','180','180','360','GWU','BS','CS','2019',3.0,'CS','master');
 INSERT INTO application VALUES (2,'123456788','123 summer rd','washington','DC',20016,'abcdef@abcdef.com','FALL','170','170','340','GWU','BA','CS','2019',4.0,'CS','phd');
 INSERT INTO application VALUES (3,'123456787','123 fall blvd','miami','FL',30002,'abcdefg@abcdefg.com','FALL','160','160','320','GWU','BS','MATH','2019',3.5,'CS','phd');
