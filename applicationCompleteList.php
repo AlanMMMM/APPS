@@ -8,7 +8,7 @@
 
 
 <form style="text-align:center;" action="reviewing.php" method="post">
-    <select name="selection">
+    <select name="selection" required="required">
         <option disabled selected value> -- select an applicant -- </option>
         <?php
         $servername= "localhost";
@@ -36,7 +36,7 @@
 
 <form style="text-align: center;" action="reviewing.php" method="post">
     Applicant UID: <input type="number" name="search"><br>
-    <input type="submit" name="goSearch" value="search" />
+    <input type="submit" required="required" name="goSearch" value="search" />
 
 
 </form>
