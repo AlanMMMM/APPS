@@ -22,7 +22,13 @@
                         <option value="Y">Yes</option>
                         <option value="N">No</option>                 
                         </select><br>
-    Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" required="required" name="decisionRec" min="1" max="4"><br>
+    Decision Recommendation: <select name="decisionRec" required="required">
+                        <option disabled selected value> -- Make A Recommendation -- </option>
+                        <option value=1>Reject</option>
+                        <option value=2>borderline</option>   
+                        <option value=3>admit without aid</option>
+                        <option value=4>admit with aid</option> 
+                        </select><br>
     Deficiency Courses if Any: (Max:25 Charactors)<input type="text" name="decisionRecDef" maxlength=25><br>
     Reviewer Comment: (Max:40 Charactors) <input type="text" name="decisionRecCom" maxlength=40><br>
     
