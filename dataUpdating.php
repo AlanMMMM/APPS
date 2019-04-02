@@ -87,36 +87,38 @@ if ($conn->connect_error) {
 <h2 style="text-align:center;"> Now please update</h2>
 <h3> Update Transcript Status</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="transcriptUpdateUID"><br>
+    Student UID: <input type="number" name="transcriptUpdateUID">
     Transcript Status: <select name="transcriptUpdate">
                         <option disabled selected value> -- select an option -- </option>
                         <option value="Yes">Transcript Received</option>
                         <option value="No">Transcript not received</option>
-                       </select>
-    <input type="submit" value="transcriptSubmit" >
+                       </select><br>
+    <input type="submit" name="transcriptSubmit" value="Update" >
 </form>
 <h3> Update Final Decision</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="decisionUpdateUID"><br>
+    Student UID: <input type="number" name="decisionUpdateUID">
     Final Decision: <select name="decisionUpdate">
                         <option disabled selected value> -- select an option -- </option>
                         <option value=1>admission with aid</option>
                         <option value=2>admission</option>
                         <option value=3>rejection</option>
-                       </select>
-    <input type="submit" value="decisionSubmit" >
+                       </select><br>
+    <input type="submit" name="decisionSubmit" value="Update" >
 </form>
 <h3> Update Application Status</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="statusUpdateUID"><br>
+    Student UID: <input type="number" name="statusUpdateUID">
     Application Status: <select name="statusUpdate">
                         <option disabled selected value> -- select an option -- </option>
-                        <option value="pending">Pending:Lacking required materials</option>
+                        <option value="pending">Pending:Missing required materials</option>
                         <option value="completed">Completed:All materials received, under reviewing</option>
                         <option value="reviewed">Reviewed:Reviewed by reviewer, waiting for final decision</option>
                         <option value="decisionMade">Decision Made:Final decision has been made</option>
-                       </select>
-    <input type="submit" value="statusSubmit" >
+                       </select><br>
+    <input type="submit" name="statusSubmit" value="Update" >
+    
+    <br><br><br><br><br><br>
 </form>
 </body>
 </html>
