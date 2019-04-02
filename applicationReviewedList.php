@@ -36,7 +36,7 @@
 <br><br><br><br><br>
 
 <form style="text-align: center;" action="decisionMaking.php" required="required" method="post">
-    Applicant UID:please type in numbers <input type="number" name="search"><br>
+    Applicant UID: (please type in numbers) <input type="number" name="search"><br>
     <input type="submit" name="goSearch" value="search" />
 
 
