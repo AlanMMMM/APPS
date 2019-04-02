@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h2 style="text-align:center;"> Now please make a decision</h2>
-<form style="text-align: center;" action="makeDec.php" method="post">
-    Student UID: <input type="number" required="required" name="decisionUID"><br>
-    Decision: Type 1 for admission with aid, 2 for admission, and 3 for rejection <br><input type="number" required="required" name="decision" min="1" max="4"><br>
-
-    <input type="submit" value="submit" >
-</form>
-<br><br><br><br>
-
 <?php
 $servername= "localhost";
 $username = "amstg";
@@ -89,6 +77,21 @@ if ($conn->connect_error) {
 }
 $conn->close();
 ?>
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2 style="text-align:center;"> Now please make a decision</h2>
+<form style="text-align: center;" action="makeDec.php" method="post">
+    Student UID: <input type="number" required="required" name="decisionUID"><br>
+    Decision: Type 1 for admission with aid, 2 for admission, and 3 for rejection <br><input type="number" required="required" name="decision" min="1" max="4"><br>
+
+    <input type="submit" value="submit" >
+</form>
+<br><br><br><br>
+
 
 
 </body>
