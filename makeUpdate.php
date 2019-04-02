@@ -43,7 +43,7 @@ if(isset($_POST['statusUpdate'])&& isset($_POST['statusUpdateUID'])){
     $statusqUID=$_POST['statusUpdateUID'];
     $sQuery = "UPDATE applicant A SET A.app_status='$statusq' WHERE A.uid='$statusqUID'";
     $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
-    if($dResult==TRUE) {
+    if($sResult==TRUE) {
         echo "application status updated successfully";
     }else{
         echo "failed to update application status:" . $conn->error;
