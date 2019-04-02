@@ -27,23 +27,28 @@ if ($conn->connect_error) {
     $oResult= $conn->query($oQuery) or die($mysqli->error);
   
     while($oRow = $oResult->fetch_assoc()){
-        echo " - uid". $oRow["uid"];
-        echo " - first name". $oRow["first_name"];
-        echo " - last name". $oRow["last_name"];
-        echo " - address". $oRow["street"]."<br>".$oRow["city"]."<br>".$oRow["state"]."<br>".$oRow["zip"];
-        echo " - email". $oRow["email"];
-        echo " - admission term". $oRow["app_term"];
-        echo " - area of interest". $oRow["area_of_interest"];
-        echo " - GRE verbal". $oRow["GRE_verbal"];
-        echo " - GRE quantitative". $oRow["GRE_quantitative"];
-        echo " - GRE total". $oRow["GRE_total"];
-        echo " - bachelor school". $oRow["bachelor_school"];
-        echo " - bachelor degree". $oRow["bachelor_degree"];
-        echo " - bachelor major". $oRow["bachelor_major"];
-        echo " - bachelor year". $oRow["bachelor_year"];
-        echo " - bachelor GPA". $oRow["bachelor_GPA"];
-        echo " - transcript received?". $oRow["transcript_received"];
-        echo " - recommendation letter received?". $oRow["rec_received"];
+        echo "Personal Information"."<br>";
+            echo " - uid: ". $oRow["uid"]."<br>";
+            echo " - first name: ". $oRow["first_name"]."<br>";
+            echo " - last name: ". $oRow["last_name"]."<br>";
+            echo " - address: ". $oRow["street"]." ".$oRow["city"]." ".$oRow["state"]." ".$oRow["zip"]."<br>";
+            echo " - email ". $oRow["email"]."<br>";
+            echo "Application Infromation"."<br>";
+            echo " - admission term ". $oRow["app_term"]."<br>";
+            echo " - area of interest ". $oRow["area_of_interest"]."<br>";
+            echo "GRE Score"."<br>";
+            echo " - GRE verbal ". $oRow["GRE_verbal"]."<br>";
+            echo " - GRE quantitative ". $oRow["GRE_quantitative"]."<br>";
+            echo " - GRE total ". $oRow["GRE_total"]."<br>";
+            echo "Education Information"."<br>";
+            echo " - bachelor school ". $oRow["bachelor_school"]."<br>";
+            echo " - bachelor degree ". $oRow["bachelor_degree"]."<br>";
+            echo " - bachelor major ". $oRow["bachelor_major"]."<br>";
+            echo " - bachelor year ". $oRow["bachelor_year"]."<br>";
+            echo " - bachelor GPA ". $oRow["bachelor_GPA"]."<br>";
+            echo "Application Material"."<br>";
+            echo " - transcript received? ". $oRow["transcript_received"]."<br>";
+            echo " - recommendation letter received? ". $oRow["rec_received"]."<br>";
     }
 }else if(isset($_POST['goSearch'])){
     if(isset($_POST['search'])){
