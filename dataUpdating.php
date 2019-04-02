@@ -85,14 +85,39 @@ if ($conn->connect_error) {
 <html>
 <body>
 <h2 style="text-align:center;"> Now please update</h2>
-<form style="text-align: center;" action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="updateUID"><br>
-                 <input type="number" name="decisionRec" min="1" max="4"><br>
-
-    <input type="submit" value="submit" >
+<h3> Update Transcript Status</h3>
+<form action="makeUpdate.php" method="post">
+    Student UID: <input type="number" name="transcriptUpdateUID"><br>
+    Transcript Status: <select name="transcriptUpdate">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="Yes">Transcript Received</option>
+                        <option value="No">Transcript not received</option>
+                       </select>
+    <input type="submit" value="transcriptSubmit" >
 </form>
-<br><br><br><br>
-
+<h3> Update Final Decision</h3>
+<form action="makeUpdate.php" method="post">
+    Student UID: <input type="number" name="decisionUpdateUID"><br>
+    Final Decision: <select name="decisionUpdate">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value=1>admission with aid</option>
+                        <option value=2>admission</option>
+                        <option value=3>rejection</option>
+                       </select>
+    <input type="submit" value="decisionSubmit" >
+</form>
+<h3> Update Application Status</h3>
+<form action="makeUpdate.php" method="post">
+    Student UID: <input type="number" name="statusUpdateUID"><br>
+    Application Status: <select name="statusUpdate">
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="pending">Pending:Lacking required materials</option>
+                        <option value="completed">Completed:All materials received, under reviewing</option>
+                        <option value="reviewed">Reviewed:Reviewed by reviewer, waiting for final decision</option>
+                        <option value="decisionMade">Decision Made:Final decision has been made</option>
+                       </select>
+    <input type="submit" value="statusSubmit" >
+</form>
 </body>
 </html>
 
