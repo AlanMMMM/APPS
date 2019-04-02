@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2 style="text-align:center;"> Now please make decision</h2>
+<h2 style="text-align:center;"> Now please make a decision</h2>
 <form style="text-align: center;" action="makeDec.php" method="post">
     Student UID: <input type="number" name="decisionUID"><br>
     Decision: Type 1 for rejection, 2 for admission without aid, and 3 for admission with aid <br><input type="number" name="decision" min="1" max="4"><br>
