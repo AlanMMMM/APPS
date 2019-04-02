@@ -32,14 +32,14 @@
                         <option value=4>admit with aid</option> 
                         </select><br>
     Reason for Rejection: <select name="rejRea">
-                           <option disabled selected value> -- Make A Recommendation -- </option>
+                           <option disabled selected value> -- Choose A Reason -- </option>
                         <option value="A">Incomplete Record</option>
                         <option value="B">Does not meet minimum Requirements</option>   
                         <option value="C">Problems with Letters</option>
                         <option value="D">Not competitive</option> 
                         <option value="E">Other reasons</option>
                         </select><br>
-    Deficiency Courses if Any: (Max:25 Charactors)<input type="text" name="decisionRecDef" maxlength=25><br>
+    Deficiency Courses if Any: (Max:40 Charactors)<input type="text" name="decisionRecDef" maxlength=40><br>
     Reviewer Comment: (Max:40 Charactors) <input type="text" name="decisionRecCom" maxlength=40><br>
     
     <input type="submit" value="Submit" >
