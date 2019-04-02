@@ -30,7 +30,7 @@ if(isset($_POST['decisionSubmit'])){
 if(isset($_POST['decisionUpdate'])&& isset($_POST['decisionUpdateUID'])){
     $decisionq=$_POST['decisionUpdate'];
     $decisionqUID=$_POST['decisionUpdateUID'];
-    $dQuery = "UPDATE applicant A SET A.decision=$decisionq, A.app_status='decisionMade' WHERE A.uid=$decisionqUID";
+    $dQuery = "UPDATE applicant A SET A.decision='$decisionq', A.app_status='decisionMade' WHERE A.uid=$decisionqUID";
     $check="SELECT * from applicant A WHERE A.uid=decisionqUID";
     $checkResult=$conn->query($check) or die("mysql error".$mysqli->error);
     if($checkResult->num_rows==0){
