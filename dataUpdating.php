@@ -10,8 +10,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
    
- if(isset($_GET['goSelect'])){
-    $selectq=$_GET['selection'];
+ if(isset($_POST['goSelect'])){
+    $selectq=$_POST['selection'];
      
     $oQuery= "SELECT * FROM applicant A, application B WHERE A.uid=$selectq AND A.uid=B.uid";
      
@@ -41,11 +41,11 @@ if ($conn->connect_error) {
             echo " - transcript received? ". $oRow["transcript_received"]."<br>";
             echo " - recommendation letter received? ". $oRow["rec_received"]."<br>";
     }
-}else if(isset($_GET['goSearch'])){
+}else if(isset($_POST['goSearch'])){
     if(isset($_POST['search'])){
         $searchq = $_POST['search'];
-        $searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
-        $sQuery = "SELECT * FROM applicant A,application B WHERE CAST(A.uid AS CHAR) = '$searchq' AND A.uid=B.uid AND A.app_status='completed'";
+       
+        $sQuery = "SELECT * FROM applicant A,application B WHERE A.uid = $searchq AND A.uid=B.uid";
         $sResult = $conn->query($sQuery) or die("mysql error".$mysqli->error);
         if($sResult->num_rows==0)
         {
@@ -74,10 +74,9 @@ if ($conn->connect_error) {
             echo "Application Material"."<br>";
             echo " - transcript received? ". $sRow["transcript_received"]."<br>";
             echo " - recommendation letter received? ". $sRow["rec_received"]."<br>";
-        }}}else{
-        echo "Applicant Not Found";
-    }
+        }}}
 }
+$conn->close();
 ?>
 
 
@@ -87,8 +86,8 @@ if ($conn->connect_error) {
 <h2 style="text-align:center;"> Now please update</h2>
 <h3> Update Transcript Status</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="transcriptUpdateUID">
-    Transcript Status: <select name="transcriptUpdate">
+    Student UID:please type in numbers <input type="number" required="required" name="transcriptUpdateUID">
+    Transcript Status: <select name="transcriptUpdate" required="required">
                         <option disabled selected value> -- select an option -- </option>
                         <option value="Yes">Transcript Received</option>
                         <option value="No">Transcript not received</option>
@@ -97,8 +96,8 @@ if ($conn->connect_error) {
 </form>
 <h3> Update Final Decision</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="decisionUpdateUID">
-    Final Decision: <select name="decisionUpdate">
+    Student UID:please type in numbers <input type="number" required="required" name="decisionUpdateUID">
+    Final Decision: <select name="decisionUpdate" required="required">
                         <option disabled selected value> -- select an option -- </option>
                         <option value=1>admission with aid</option>
                         <option value=2>admission</option>
@@ -108,8 +107,8 @@ if ($conn->connect_error) {
 </form>
 <h3> Update Application Status</h3>
 <form action="makeUpdate.php" method="post">
-    Student UID: <input type="number" name="statusUpdateUID">
-    Application Status: <select name="statusUpdate">
+    Student UID:please type in numbers <input type="number" required="required" name="statusUpdateUID">
+    Application Status: <select name="statusUpdate" required="required">
                         <option disabled selected value> -- select an option -- </option>
                         <option value="pending">Pending:Missing required materials</option>
                         <option value="completed">Completed:All materials received, under reviewing</option>
