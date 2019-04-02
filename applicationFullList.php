@@ -34,7 +34,7 @@
 <br><br><br><br><br>
 
 <form style="text-align: center;" action="dataUpdating.php" method="post">
-    Applicant UID: <input type="text" required="required" name="search"><br>
+    Applicant UID:(please type in number) <input type="number" required="required" name="search"><br>
     <input type="submit" name="goSearch" value="search" />
 
 
