@@ -9,7 +9,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_POST['decisionRec'])&& isset($_POST['decisionRecUID'])){
+if(isset($_GET['decisionRec'])&& isset($_GET['decisionRecUID'])){
     $addingq=$_POST['decisionRec'];
     $addingqUID=$_POST['decisionRecUID'];
     $aQuery = "UPDATE applicant A SET A.app_rec='$addingq', A.app_status='reviewed' WHERE A.uid='$addingqUID'";
