@@ -86,7 +86,7 @@ if ($conn->connect_error) {
             echo " - recommendation letter received? ". $sRow["rec_received"]."<br>";
         }}}
 }
-
+$conn->close();
 ?>
 
 
