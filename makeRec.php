@@ -29,7 +29,7 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <body>
-<form style="text-align: center;" action="applicationList.php" method="post">
+<form style="text-align: center;" action="applicationCompleteList.php" method="post">
     Now you can go back: <input type="submit" value="GO BACK" />
 </form>
 <br><br><br><br>
