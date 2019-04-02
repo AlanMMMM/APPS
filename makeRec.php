@@ -20,7 +20,7 @@ if(isset($_GET['decisionRec'])&& isset($_GET['decisionRecUID'])){
         echo "failed to make decision recommendation:" . $conn->error;
     }
 }else{
-    echo "decision recommendation not made";
+    echo "No Applicant Found, decision recommendation not made";
 }
 
 $conn->close();
