@@ -35,7 +35,7 @@
 <br><br><br><br><br>
 
 <form style="text-align: center;" action="reviewing.php" method="post">
-    Applicant UID: please type in numbers <input type="number" required="required" name="search"><br>
+    Applicant UID: (please type in numbers) <input type="number" required="required" name="search"><br>
     <input type="submit"  name="goSearch" value="search" />
 
 
