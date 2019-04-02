@@ -4,8 +4,28 @@
 <h2 style="text-align:center;"> Now please make a decision recommendation</h2>
 <form style="text-align: center;" action="makeRec.php" method="post">
     Student UID: (please type in numbers) <input type="number" required="required" name="decisionRecUID"><br>
+    Recommendation Letter Rating: (Worst=1, Best=5) <select name="recRating" required="required">
+                        <option disabled selected value> -- select a score -- </option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=1>3</option>
+                        <option value=2>4</option>
+                        <option value=1>5</option>
+                       </select><br>
+    Is the Recommendation Letter Generic? <select name="recGen" required="required">
+                        <option disabled selected value> -- select YES or NO -- </option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>                 
+                        </select><br>
+    Is the Recommendation Letter Credible? <select name="recCre" required="required">
+                        <option disabled selected value> -- select YES or NO -- </option>
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>                 
+                        </select><br>
     Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" required="required" name="decisionRec" min="1" max="4"><br>
-
+    Deficiency Courses if Any: (Max:25 Charactors)<input type="text" name="decisionRecDef" maxlength=25><br>
+    Reviewer Comment: (Max:40 Charactors) <input type="text" name="decisionRecCom" maxlength=40><br>
+    
     <input type="submit" value="Submit" >
 </form>
 <br><br><br><br>
