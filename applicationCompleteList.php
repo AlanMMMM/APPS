@@ -35,8 +35,8 @@
 <br><br><br><br><br>
 
 <form style="text-align: center;" action="reviewing.php" method="post">
-    Applicant UID: <input type="number" name="search"><br>
-    <input type="submit" required="required" name="goSearch" value="search" />
+    Applicant UID: <input type="number" required="required" name="search"><br>
+    <input type="submit"  name="goSearch" value="search" />
 
 
 </form>
