@@ -9,6 +9,7 @@
 
 <form style="text-align:center;" action="reviewing.php">
     <select name="selection">
+        <option disabled selected value> -- select an applicant -- </option>
         <?php
         $servername= "localhost";
         $username = "amstg";
