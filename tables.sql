@@ -107,7 +107,7 @@ INSERT INTO applicant VALUES ('tom','ford',2,'completed','Yes','Yes',NULL,NULL,N
 INSERT INTO applicant VALUES ('tony','allen',3,'pending','Yes','No',NULL,NULL,NULL,NULL,NULL,NULL);
 INSERT INTO recommendation VALUES (1,'Tim','Wood','professor','Rick is a great student',0,NULL,NULL,1);
 INSERT INTO recommendation VALUES (2,'Tim','Wood','professor','Tom is a great student as well',0,NULL,NULL,2);
-INSERT INTO application VALUES (1,'123456789','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL',180,180,2017,"physics",100,2018,'GWU','BS','CS',2019,3.0,'CS','master');
-INSERT INTO application VALUES (2,'123456788','123 summer rd','washington','DC',20016,'abcdef@abcdef.com','FALL',170,170,2018,"physics",100,2018,'GWU','BA','CS',2019,4.0,'CS','phd');
-INSERT INTO application VALUES (3,'123456787','123 fall blvd','miami','FL',30002,'abcdefg@abcdefg.com','FALL',160,160,2018,"physics",100,2018,'GWU','BS','MATH',2019,3.5,'CS','phd');
+INSERT INTO application VALUES (1,'123456789','123 spring st','new york','NY',10002,'abcde@abcde.com','FALL',180,180,2017,180,"physics",100,2018,'GWU','BS','CS',2019,3.0,'CS','master');
+INSERT INTO application VALUES (2,'123456788','123 summer rd','washington','DC',20016,'abcdef@abcdef.com','FALL',170,170,2018,170,"physics",100,2018,'GWU','BA','CS',2019,4.0,'CS','phd');
+INSERT INTO application VALUES (3,'123456787','123 fall blvd','miami','FL',30002,'abcdefg@abcdefg.com','FALL',160,160,2018,160,"physics",100,2018,'GWU','BS','MATH',2019,3.5,'CS','phd');
 
