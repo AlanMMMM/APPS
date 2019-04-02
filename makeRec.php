@@ -8,7 +8,7 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo $_GET['decisionRec'].$_GET['decisionRecUID'];
+echo $_POST['decisionRec'].$_POST['decisionRecUID'];
 if(isset($_GET['decisionRec'])&& isset($_GET['decisionRecUID'])){
     $addingq=$_POST['decisionRec'];
     $addingqUID=$_POST['decisionRecUID'];
