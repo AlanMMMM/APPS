@@ -21,7 +21,7 @@
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
         if(result.num_rows==0)
         {
-            echo "No applicant being reviewed by reviewer yet"
+            echo "No applicant being reviewed by reviewer yet";
         }
         while($row = mysqli_fetch_assoc($result)){
             $rowUid=$row['uid'];
