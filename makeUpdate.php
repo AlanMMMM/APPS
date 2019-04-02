@@ -7,8 +7,8 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_GET['transcriptSubmit'])){
-if(isset($_GET['transcriptUpdate'])&& isset($_GET['transcriptUpdateUID'])){
+if(isset($_POST['transcriptSubmit'])){
+if(isset($_POST['transcriptUpdate'])&& isset($_POST['transcriptUpdateUID'])){
     $transcriptq=$_POST['transcriptUpdate'];
     $transcriptqUID=$_POST['transcriptUpdateUID'];
     $tQuery = "UPDATE applicant A SET A.transcript_received='$transcriptq' WHERE A.uid='$transcriptqUID'";
@@ -22,8 +22,8 @@ if(isset($_GET['transcriptUpdate'])&& isset($_GET['transcriptUpdateUID'])){
     echo "No Applicant Found, transcript status update not made";
 }}
    
-if(isset($_GET['decisionSubmit'])){
-if(isset($_GET['decisionUpdate'])&& isset($_GET['decisionUpdateUID'])){
+if(isset($_POST['decisionSubmit'])){
+if(isset($_POST['decisionUpdate'])&& isset($_POST['decisionUpdateUID'])){
     $decisionq=$_POST['decisionUpdate'];
     $decisionqUID=$_POST['decisionUpdateUID'];
     $dQuery = "UPDATE applicant A SET A.decision='$decisionq', A.app_status='decisionMade' WHERE A.uid='$decisionqUID'";
@@ -37,8 +37,8 @@ if(isset($_GET['decisionUpdate'])&& isset($_GET['decisionUpdateUID'])){
     echo "No Applicant Found, decision not made";
 }}
    
-if(isset($_GET['statusSubmit'])){
-if(isset($_GET['statusUpdate'])&& isset($_GET['statusUpdateUID'])){
+if(isset($_POST['statusSubmit'])){
+if(isset($_POST['statusUpdate'])&& isset($_POST['statusUpdateUID'])){
     $statusq=$_POST['statusUpdate'];
     $statusqUID=$_POST['statusUpdateUID'];
     $sQuery = "UPDATE applicant A SET A.app_status='$statusq' WHERE A.uid='$statusqUID'";
