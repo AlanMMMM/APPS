@@ -84,9 +84,7 @@ if ($conn->connect_error) {
             echo "Application Material"."<br>";
             echo " - transcript received? ". $sRow["transcript_received"]."<br>";
             echo " - recommendation letter received? ". $sRow["rec_received"]."<br>";
-        }}}else{
-        echo "Applicant Not Found";
-    }
+        }}}
 }
 
 ?>
