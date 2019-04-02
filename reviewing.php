@@ -6,7 +6,7 @@
     Student UID: <input type="number" required="required" name="decisionRecUID"><br>
     Decision Recommendation: Type 1 for rejection, 2 for borderline, 3 for admission without aid, and 4 for admission with aid <br><input type="number" required="required" name="decisionRec" min="1" max="4"><br>
 
-    <input type="submit" value=">>" >
+    <input type="submit" value="Submit" >
 </form>
 <br><br><br><br>
 
