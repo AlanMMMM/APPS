@@ -18,7 +18,7 @@
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-        $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='reviewed'";
+        $query = "SELECT uid, first_name, last_name FROM applicant WHERE app_status='reviewed' ORDER BY uid";
         $result = $conn->query($query) or die("mysql error".$mysqli->error);
        
           
