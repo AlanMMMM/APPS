@@ -1,8 +1,8 @@
 <?php
 $servername= "localhost";
-$username = "amstg";
-$password = "seas";
-$dbname = "amstg";
+        $username = "XDJ";
+        $password = "CSCI2541_sp19";
+        $dbname = "XDJ";
 $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -11,7 +11,6 @@ if ($conn->connect_error) {
     $selectq=$_POST['selection'];
      
    $oQuery = "SELECT * FROM applicant A, application B, recommendation C WHERE A.uid=$selectq AND A.uid=B.uid AND A.uid=C.uid AND A.app_status='reviewed'";
-
     $oResult= $conn->query($oQuery) or die($mysqli->error);
   
     while($oRow = $oResult->fetch_assoc()){
@@ -21,7 +20,8 @@ if ($conn->connect_error) {
             echo "Semester of Application: ". $oRow["app_term"]."<br>";
             echo "Applying for Degree: ".$oRow["degree_seeking"]."<br>";
             echo "Area of Interest: ". $oRow["area_of_interest"]."<br><br>";
-            
+            echo "Reviewer's Opinion"."<br>";
+            echo "Rating: ".$oRow["app_rec"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comment".$oRow['app_rec_comment']."<br><br>";
             echo "Exams"."<br>";
             echo "GRE &nbsp;&nbsp;&nbsp;"."Verbal: ". $oRow["GRE_verbal"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Quantitative: ".$oRow["GRE_quantitative"]."<br>";
             echo "Year of Exam: ".$oRow["exam_year"]."<br>";
@@ -29,7 +29,8 @@ if ($conn->connect_error) {
             echo "TOEFL Score: ".$oRow["TOEFL_score"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year of Exam: ".$oRow["TOEFL_year"]."<br><br>";
            
             echo "Prior Degrees"."<br>";
-            echo $oRow["bachelor_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$oRow["bachelor_gpa"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$oRow["bachelor_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$oRow["bachelor_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$oRow["bachelor_school"]."<br><br>";
+                        echo "Bachelor Degree: ".$oRow["bachelor_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$oRow["bachelor_gpa"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$oRow["bachelor_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$oRow["bachelor_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$oRow["bachelor_school"]."<br>";
+            echo "Master Degree: ".$oRow["masters_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$oRow["masters_gpa"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$oRow["masters_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$oRow["masters_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$oRow["masters_school"]."<br><br>";
     
             echo "Application Material"."<br>";
             echo "Transcript Received: ". $oRow["transcript_received"]."<br>";
@@ -55,6 +56,8 @@ if ($conn->connect_error) {
             echo "Semester of Application: ". $sRow["app_term"]."<br>";
             echo "Applying for Degree: ".$sRow["degree_seeking"]."<br>";
             echo "Area of Interest: ". $sRow["area_of_interest"]."<br><br>";
+            echo "Reviewer's Opinion"."<br>";
+            echo "Rating: ".$sRow["app_rec"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comment".$sRow['app_rec_comment']."<br><br>";
             
             echo "Exams"."<br>";
             echo "GRE &nbsp;&nbsp;&nbsp;"."Verbal: ". $sRow["GRE_verbal"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Quantitative: ".$sRow["GRE_quantitative"]."<br>";
@@ -63,7 +66,8 @@ if ($conn->connect_error) {
             echo "TOEFL Score: ".$sRow["TOEFL_score"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year of Exam: ".$sRow["TOEFL_year"]."<br><br>";
            
             echo "Prior Degrees"."<br>";
-            echo $sRow["bachelor_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$sRow["bachelor_gpa"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$sRow["bachelor_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$sRow["bachelor_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$sRow["bachelor_school"]."<br><br>";
+            echo "Bachelor Degree: ".$sRow["bachelor_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$sRow["bachelor_gpa"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$sRow["bachelor_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$sRow["bachelor_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$sRow["bachelor_school"]."<br>";
+            echo "Master Degree: ".$sRow["masters_degree"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPA: ".$sRow["masters_gpa"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Major: ".$sRow["masters_major"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year: ".$sRow["masters_year"]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University: ".$sRow["masters_school"]."<br><br>";
     
             echo "Application Material"."<br>";
             echo "Transcript Received: ". $sRow["transcript_received"]."<br>";
