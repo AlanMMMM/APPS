@@ -34,7 +34,7 @@ CREATE TABLE applicant(
   rec_received varchar(15) not null default 'No',
   decision int default 0,
   app_rec int,
-  app_rec_advisor_uid int,
+  app_rec_advisor varchar(40),
   app_rec_comment varchar(40),
   app_deficiency_courses varchar(40),
   reason_for_reject varchar(1),
