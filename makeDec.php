@@ -1,8 +1,8 @@
 <?php
 $servername= "localhost";
-$username = "amstg";
-$password = "seas";
-$dbname = "amstg";
+        $username = "XDJ";
+        $password = "CSCI2541_sp19";
+        $dbname = "XDJ";
 $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -29,7 +29,7 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <body>
-<form style="text-align: center;" action="applicationReviewedList.php" method="post">
+<form style="text-align: center;" action="cac.php" method="post">
     Now you can go back: <input type="submit" value="GO BACK" />
 </form>
 <br><br><br><br>
