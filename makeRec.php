@@ -1,14 +1,13 @@
 
 <?php
 $servername= "localhost";
-$username = "amstg";
-$password = "seas";
-$dbname = "amstg";
+        $username = "XDJ";
+        $password = "CSCI2541_sp19";
+        $dbname = "XDJ";
 $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 if(isset($_POST['decisionRec'])&& isset($_POST['decisionRecUID'])){
     $addingq=$_POST['decisionRec'];
     $commentq=$_POST['decisionRecCom'];
@@ -18,7 +17,8 @@ if(isset($_POST['decisionRec'])&& isset($_POST['decisionRecUID'])){
     $recRatingq=$_POST['recRating'];
     $addingqUID=$_POST['decisionRecUID'];
     $rejReaq=$_POST['rejRea'];
-    $aQuery = "UPDATE applicant A, recommendation B SET A.app_rec='$addingq', A.reason_for_reject='$rejReaq',A.app_rec_comment='$commentq', A.app_deficiency_courses='$defq', B.rec_rating='$recRatingq', B.rec_generic='$recGenq', B.rec_credible='$recCreq', A.app_status='reviewed' WHERE A.uid='$addingqUID' AND A.uid=B.uid";
+        $recAdvq=$_POST['decisionRecAdv'];
+    $aQuery = "UPDATE applicant A, recommendation B SET A.app_rec='$addingq',A.app_rec_advisor='$recAdvq', A.reason_for_reject='$rejReaq',A.app_rec_comment='$commentq', A.app_deficiency_courses='$defq', B.rec_rating='$recRatingq', B.rec_generic='$recGenq', B.rec_credible='$recCreq', A.app_status='reviewed' WHERE A.uid='$addingqUID' AND A.uid=B.uid";
     $check="SELECT * from applicant A WHERE A.uid='$addingqUID'";
     $checkResult=$conn->query($check) or die("mysql error".$mysqli->error);
     if($checkResult->num_rows==0){
@@ -32,7 +32,6 @@ if(isset($_POST['decisionRec'])&& isset($_POST['decisionRecUID'])){
         echo "failed to make decision recommendation, please try again";
     }}
 }
-
 $conn->close();
 ?>
 
