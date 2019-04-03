@@ -40,6 +40,6 @@
 
 
 </form>
-
+<input style="text-align:center;" type=button onClick="location.href='../LogIn/login.php'" value='Log off'>
 </body>
 </html>
