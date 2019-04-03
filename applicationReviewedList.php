@@ -11,9 +11,9 @@
         <option disabled selected value> -- select an option -- </option>
         <?php
         $servername= "localhost";
-        $username = "amstg";
-        $password = "seas";
-        $dbname = "amstg";
+        $username = "XDJ";
+        $password = "CSCI2541_sp19";
+        $dbname = "XDJ";
         $conn = new mysqli($servername,$username,$password,$dbname);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
